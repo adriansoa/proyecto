@@ -8,12 +8,13 @@ namespace BibliotecaClases
 {
    public class Libro
     {
-        public int codigo { get; set; }
+        public string codigo { get; set; }
         public string titulo { get; set; }
         public string autor { get; set; }
         public string editorial { get; set; }
         public string anho_publicacion { get; set; }
-        public int edicion { get; set; }
+        public string edicion { get; set; }
+        public Materia materia { get; set; }
 
         public static List<Libro> listaLibro = new List<Libro>();
 

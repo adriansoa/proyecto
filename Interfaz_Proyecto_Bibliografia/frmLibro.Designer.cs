@@ -48,8 +48,8 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.txtAnoPublicacion = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.dtgLibroDetalle = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgLibroDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -182,6 +182,7 @@
             this.btnAgregar.TabIndex = 17;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEliminar
             // 
@@ -191,6 +192,7 @@
             this.btnEliminar.TabIndex = 18;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnModificar
             // 
@@ -217,21 +219,21 @@
             this.txtAnoPublicacion.Size = new System.Drawing.Size(124, 22);
             this.txtAnoPublicacion.TabIndex = 21;
             // 
-            // dataGridView1
+            // dtgLibroDetalle
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(49, 321);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(691, 150);
-            this.dataGridView1.TabIndex = 22;
+            this.dtgLibroDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgLibroDetalle.Location = new System.Drawing.Point(49, 321);
+            this.dtgLibroDetalle.Name = "dtgLibroDetalle";
+            this.dtgLibroDetalle.RowTemplate.Height = 24;
+            this.dtgLibroDetalle.Size = new System.Drawing.Size(691, 150);
+            this.dtgLibroDetalle.TabIndex = 22;
             // 
             // frmLibro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(809, 529);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgLibroDetalle);
             this.Controls.Add(this.txtAnoPublicacion);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnModificar);
@@ -254,7 +256,8 @@
             this.Controls.Add(this.label1);
             this.Name = "frmLibro";
             this.Text = "frmLibro";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmLibro_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgLibroDetalle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -282,6 +285,6 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.TextBox txtAnoPublicacion;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgLibroDetalle;
     }
 }
