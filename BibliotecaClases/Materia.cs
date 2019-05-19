@@ -13,12 +13,27 @@ namespace BibliotecaClases
         public int cant_creditos { get; set; }
         public string tipo_materia { get; set; }
 
+        public static List<Materia> listaMateria = new List<Materia>();
 
-        //Firma de Metodo
-        public void RegistrarMateria()
+        public static void AgregarMateria(Materia m)
         {
+            listaMateria.Add(m);
         }
 
+        public static void EliminarMateria(Materia m)
+        {
+            listaMateria.Remove(m);
+        }
+
+        public static List<Materia> ObtenerMateria()
+        {
+            return listaMateria;
+        }
+
+        public override string ToString()
+        {
+            return this.Nombre;
+        }
 
     }
 }
