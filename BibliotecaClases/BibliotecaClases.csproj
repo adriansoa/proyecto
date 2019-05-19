@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alumno.cs" />
+    <Compile Include="DetalleFacturaVenta.cs" />
     <Compile Include="FacturaVenta.cs" />
     <Compile Include="Facultad.cs" />
     <Compile Include="Libro.cs" />
