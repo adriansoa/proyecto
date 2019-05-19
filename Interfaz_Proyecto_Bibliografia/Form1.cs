@@ -16,5 +16,11 @@ namespace Interfaz_Proyecto_Bibliografia
         {
             InitializeComponent();
         }
+
+        private void tsmLibro_Click(object sender, EventArgs e)
+        {
+            frmLibro libro = new frmLibro();
+            libro.Show();
+        }
     }
 }

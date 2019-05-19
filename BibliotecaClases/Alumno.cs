@@ -18,7 +18,7 @@ namespace BibliotecaClases
 
 
 
-        private String Promocion;
+        //private String Promocion;
         
         public override string ToString()
         {

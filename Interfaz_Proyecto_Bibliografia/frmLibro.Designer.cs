@@ -202,6 +202,7 @@
             this.btnModificar.TabIndex = 19;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnCerrar
             // 
@@ -211,6 +212,7 @@
             this.btnCerrar.TabIndex = 20;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // txtAnoPublicacion
             // 
@@ -227,6 +229,7 @@
             this.dtgLibroDetalle.RowTemplate.Height = 24;
             this.dtgLibroDetalle.Size = new System.Drawing.Size(691, 150);
             this.dtgLibroDetalle.TabIndex = 22;
+            this.dtgLibroDetalle.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgLibroDetalle_CellClick);
             // 
             // frmLibro
             // 
