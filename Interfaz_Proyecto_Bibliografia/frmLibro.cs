@@ -70,8 +70,8 @@ namespace Interfaz_Proyecto_Bibliografia
             cmbMateria.DataSource = Materia.ObtenerMateria();
             libro = new Libro();
             dtgLibroDetalle.AutoGenerateColumns = true;
-            btnEliminar.Enabled = false;
-            btnModificar.Enabled = false;
+            //btnEliminar.Enabled = false;
+            //btnModificar.Enabled = false;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -81,7 +81,7 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-
+            
             dtgLibroDetalle[1, index].Value = txtCodigo.Text;
             dtgLibroDetalle[2, index].Value = txtTitulo.Text;
             dtgLibroDetalle[3, index].Value = txtAutor.Text;
@@ -94,21 +94,22 @@ namespace Interfaz_Proyecto_Bibliografia
             Limpiar();
         }
 
-        private void dtgLibroDetalle_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = dtgLibroDetalle.CurrentRow.Index;
-            txtCodigo.Text = dtgLibroDetalle[1, index].Value.ToString();
-            txtTitulo.Text = dtgLibroDetalle[2, index].Value.ToString();
-            txtAutor.Text = dtgLibroDetalle[3, index].Value.ToString();
-            txtEditoria.Text = dtgLibroDetalle[4, index].Value.ToString();
-            txtAnoPublicacion.Text = dtgLibroDetalle[5, index].Value.ToString();
-            txtEdicion.Text = dtgLibroDetalle[6, index].Value.ToString();
-            cmbMateria.SelectedItem = dtgLibroDetalle[7, index].Value.ToString();
-            txtPrecio.Text = dtgLibroDetalle[8, index].Value.ToString();
+        //private void dtgLibroDetalle_CellClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    int poc = dtgLibroDetalle.CurrentRow.Index;
+        //    //MessageBox.Show("poc");
+        //    txtCodigo.Text = dtgLibroDetalle[1, poc].Value.ToString();
+        //    txtTitulo.Text = dtgLibroDetalle[2, poc].Value.ToString();
+        //    txtAutor.Text = dtgLibroDetalle[3, poc].Value.ToString();
+        //    txtEditoria.Text = dtgLibroDetalle[4, poc].Value.ToString();
+        //    txtAnoPublicacion.Text = dtgLibroDetalle[5, poc].Value.ToString();
+        //    txtEdicion.Text = dtgLibroDetalle[6, poc].Value.ToString();
+        //    //cmbMateria.SelectedItem = dtgLibroDetalle[7, poc].Value.ToString();
+        //    txtPrecio.Text = dtgLibroDetalle[8, poc].Value.ToString();
 
-            btnAgregar.Enabled = false;
-            btnModificar.Enabled = true;
-            btnEliminar.Enabled = true;
-        }
+        //    btnAgregar.Enabled = false;
+        //    btnModificar.Enabled = true;
+        //    btnEliminar.Enabled = true;
+        //}
     }
 }
