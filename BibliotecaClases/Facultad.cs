@@ -16,7 +16,7 @@ namespace BibliotecaClases
 
         public static void AgregarFacultad(Facultad f)
         {
-            listaFacultad.Add(f)
+            listaFacultad.Add(f);
         }
         
         public static void EliminarFacultad(Facultad f)

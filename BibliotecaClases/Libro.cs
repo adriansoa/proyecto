@@ -15,17 +15,26 @@ namespace BibliotecaClases
         public string anho_publicacion { get; set; }
         public int edicion { get; set; }
 
+        public static List<Libro> listaLibro = new List<Libro>();
 
-
-        //Firma de Metodo
-        public void RegistraLibro()
+        public static void AgregarLibro(Libro l)
         {
+            listaLibro.Add(l);
         }
 
-        public Libro()
+        public static void EliminarLibro(Libro l)
         {
-
+            listaLibro.Remove(l);
         }
 
+        public static List<Libro> ObtenerLibro()
+        {
+            return listaLibro;
+        }
+
+        public override string ToString()
+        {
+            return this.titulo;
+        }
     }
 }
