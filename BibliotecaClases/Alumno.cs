@@ -8,35 +8,26 @@ namespace BibliotecaClases
 {
     public class Alumno : Persona
     {
-        public DateTime Fecha_Nacimiento {
-             get { return Fecha_Nacimiento; }
-
-            set {
-                 String.Format("{0: dd/MM/yyyy}",Fecha_Nacimiento);
-            }
-        }
-
-
-
-        //private String Promocion;
-        
+       public String Promocion;
+    
         public override string ToString()
         {
             return string.Format ("Nombre: {0} Nro Doc: {1} Telefono: {2}", this.nombre ,this.nro_documento , this.telefono);
         }
 
-      
+        public static List<Alumno> listadoAlumnos = new List<Alumno>();
 
-    
-
-        public Alumno()
+        public static void AgregarAlumno(Alumno a)
         {
-     
+            listadoAlumnos.Add(a);
         }
-
-        //Firma de Metodo
-        public void RegistrarAlumno()
-        {   
+        public static void EliminarAlumno(Alumno a)
+        {
+            listadoAlumnos.Remove(a);
+        }
+        public static List<Alumno> ObtenerCarnes()
+        {
+            return listadoAlumnos;
         }
 
 

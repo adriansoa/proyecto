@@ -17,10 +17,16 @@ namespace Interfaz_Proyecto_Bibliografia
             InitializeComponent();
         }
 
-        private void tsmLibro_Click(object sender, EventArgs e)
+        private void ventaDeBibliografiasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmLibro libro = new frmLibro();
-            libro.Show();
+            frmVentaBibliografias Venta = new frmVentaBibliografias();
+            Venta.Show();
+        }
+
+        private void alumnoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAlumno al = new frmAlumno();
+            al.Show();
         }
     }
 }

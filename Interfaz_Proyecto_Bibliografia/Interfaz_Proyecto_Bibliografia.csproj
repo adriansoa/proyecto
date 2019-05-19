@@ -52,28 +52,28 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionBibliografia.cs">
+    <Compile Include="frmAlumno.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionBibliografia.Designer.cs">
-      <DependentUpon>frmGestionBibliografia.cs</DependentUpon>
+    <Compile Include="frmAlumno.Designer.cs">
+      <DependentUpon>frmAlumno.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLibro.cs">
+    <Compile Include="frmVentaBibliografias.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLibro.Designer.cs">
-      <DependentUpon>frmLibro.cs</DependentUpon>
+    <Compile Include="frmVentaBibliografias.Designer.cs">
+      <DependentUpon>frmVentaBibliografias.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionBibliografia.resx">
-      <DependentUpon>frmGestionBibliografia.cs</DependentUpon>
+    <EmbeddedResource Include="frmAlumno.resx">
+      <DependentUpon>frmAlumno.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLibro.resx">
-      <DependentUpon>frmLibro.cs</DependentUpon>
+    <EmbeddedResource Include="frmVentaBibliografias.resx">
+      <DependentUpon>frmVentaBibliografias.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
