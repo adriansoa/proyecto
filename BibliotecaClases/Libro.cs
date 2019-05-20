@@ -15,6 +15,7 @@ namespace BibliotecaClases
         public string anho_publicacion { get; set; }
         public string edicion { get; set; }
         public Materia materia { get; set; }
+        public string Precio { get; set; }
 
         public static List<Libro> listaLibro = new List<Libro>();
 

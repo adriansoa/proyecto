@@ -58,6 +58,12 @@
     <Compile Include="frmAlumno.Designer.cs">
       <DependentUpon>frmAlumno.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLibro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLibro.Designer.cs">
+      <DependentUpon>frmLibro.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVentaBibliografias.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAlumno.resx">
       <DependentUpon>frmAlumno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLibro.resx">
+      <DependentUpon>frmLibro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentaBibliografias.resx">
       <DependentUpon>frmVentaBibliografias.cs</DependentUpon>
