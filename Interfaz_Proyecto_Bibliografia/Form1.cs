@@ -29,10 +29,10 @@ namespace Interfaz_Proyecto_Bibliografia
             al.Show();
         }
 
-        private void materiaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void tsmLibro_Click(object sender, EventArgs e)
         {
-            frmMateria mat = new frmMateria();
-            mat.Show();
+            frmLibro libro = new frmLibro();
+            libro.Show();
         }
     }
 }
