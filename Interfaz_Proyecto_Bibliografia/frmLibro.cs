@@ -63,5 +63,10 @@ namespace Interfaz_Proyecto_Bibliografia
             }
             ActualizarDataGrib();
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Show();
+        }
     }
 }
