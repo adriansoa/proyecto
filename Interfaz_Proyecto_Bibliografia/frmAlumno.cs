@@ -46,7 +46,7 @@ namespace Interfaz_Proyecto_Bibliografia
             al.Promocion = txtPromocion.Text;
 
             Alumno.AgregarAlumno(al);
-    
+            
             MessageBox.Show("El alumno ha sido agregado con éxito");
             LimpiarFormulario();
         }

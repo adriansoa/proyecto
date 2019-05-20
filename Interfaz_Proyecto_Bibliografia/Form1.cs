@@ -28,5 +28,11 @@ namespace Interfaz_Proyecto_Bibliografia
             frmAlumno al = new frmAlumno();
             al.Show();
         }
+
+        private void materiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMateria mat = new frmMateria();
+            mat.Show();
+        }
     }
 }

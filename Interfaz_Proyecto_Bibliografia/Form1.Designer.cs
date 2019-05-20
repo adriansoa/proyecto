@@ -30,13 +30,13 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.gestionDeBibliografiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ventaDeBibliografiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facultadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.materiaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.libroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.procesosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gestionDeBibliografiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ventaDeBibliografiasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,6 +63,32 @@
             this.mantenimientosToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
             this.mantenimientosToolStripMenuItem.Text = "Mantenimientos";
             // 
+            // alumnoToolStripMenuItem
+            // 
+            this.alumnoToolStripMenuItem.Name = "alumnoToolStripMenuItem";
+            this.alumnoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alumnoToolStripMenuItem.Text = "Alumno";
+            this.alumnoToolStripMenuItem.Click += new System.EventHandler(this.alumnoToolStripMenuItem_Click);
+            // 
+            // facultadToolStripMenuItem
+            // 
+            this.facultadToolStripMenuItem.Name = "facultadToolStripMenuItem";
+            this.facultadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.facultadToolStripMenuItem.Text = "Facultad";
+            // 
+            // materiaToolStripMenuItem
+            // 
+            this.materiaToolStripMenuItem.Name = "materiaToolStripMenuItem";
+            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.materiaToolStripMenuItem.Text = "Materia";
+            this.materiaToolStripMenuItem.Click += new System.EventHandler(this.materiaToolStripMenuItem_Click);
+            // 
+            // libroToolStripMenuItem
+            // 
+            this.libroToolStripMenuItem.Name = "libroToolStripMenuItem";
+            this.libroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.libroToolStripMenuItem.Text = "Libro";
+            // 
             // procesosToolStripMenuItem
             // 
             this.procesosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -84,31 +110,6 @@
             this.ventaDeBibliografiasToolStripMenuItem.Size = new System.Drawing.Size(198, 22);
             this.ventaDeBibliografiasToolStripMenuItem.Text = "Venta de Bibliografias";
             this.ventaDeBibliografiasToolStripMenuItem.Click += new System.EventHandler(this.ventaDeBibliografiasToolStripMenuItem_Click);
-            // 
-            // alumnoToolStripMenuItem
-            // 
-            this.alumnoToolStripMenuItem.Name = "alumnoToolStripMenuItem";
-            this.alumnoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.alumnoToolStripMenuItem.Text = "Alumno";
-            this.alumnoToolStripMenuItem.Click += new System.EventHandler(this.alumnoToolStripMenuItem_Click);
-            // 
-            // facultadToolStripMenuItem
-            // 
-            this.facultadToolStripMenuItem.Name = "facultadToolStripMenuItem";
-            this.facultadToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.facultadToolStripMenuItem.Text = "Facultad";
-            // 
-            // materiaToolStripMenuItem
-            // 
-            this.materiaToolStripMenuItem.Name = "materiaToolStripMenuItem";
-            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.materiaToolStripMenuItem.Text = "Materia";
-            // 
-            // libroToolStripMenuItem
-            // 
-            this.libroToolStripMenuItem.Name = "libroToolStripMenuItem";
-            this.libroToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.libroToolStripMenuItem.Text = "Libro";
             // 
             // frmMenuPrincipal
             // 

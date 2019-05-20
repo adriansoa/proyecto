@@ -36,7 +36,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtRuc = new System.Windows.Forms.TextBox();
+            this.txtCI = new System.Windows.Forms.TextBox();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.rdbContado = new System.Windows.Forms.RadioButton();
             this.rdbCredito = new System.Windows.Forms.RadioButton();
@@ -109,31 +109,32 @@
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(167, 74);
+            this.txtNombre.Location = new System.Drawing.Point(438, 75);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 7;
+            this.txtNombre.TabIndex = 0;
             // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(167, 115);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
-            this.txtDireccion.TabIndex = 8;
+            this.txtDireccion.TabIndex = 2;
             // 
-            // txtRuc
+            // txtCI
             // 
-            this.txtRuc.Location = new System.Drawing.Point(438, 74);
-            this.txtRuc.Name = "txtRuc";
-            this.txtRuc.Size = new System.Drawing.Size(100, 20);
-            this.txtRuc.TabIndex = 9;
+            this.txtCI.Location = new System.Drawing.Point(167, 74);
+            this.txtCI.Name = "txtCI";
+            this.txtCI.Size = new System.Drawing.Size(100, 20);
+            this.txtCI.TabIndex = 1;
+            
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(438, 115);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono.TabIndex = 10;
+            this.txtTelefono.TabIndex = 3;
             // 
             // rdbContado
             // 
@@ -226,8 +227,8 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(167, 149);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 20;
+            this.comboBox1.Size = new System.Drawing.Size(100, 21);
+            this.comboBox1.TabIndex = 4;
             // 
             // lblCantidad
             // 
@@ -243,7 +244,7 @@
             this.textBox1.Location = new System.Drawing.Point(167, 184);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 22;
+            this.textBox1.TabIndex = 5;
             // 
             // frmVentaBibliografias
             // 
@@ -263,7 +264,7 @@
             this.Controls.Add(this.rdbCredito);
             this.Controls.Add(this.rdbContado);
             this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.txtRuc);
+            this.Controls.Add(this.txtCI);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label6);
@@ -290,7 +291,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtRuc;
+        private System.Windows.Forms.TextBox txtCI;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.RadioButton rdbContado;
         private System.Windows.Forms.RadioButton rdbCredito;

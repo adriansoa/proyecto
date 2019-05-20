@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace BibliotecaClases
 {
+
+    public enum TipoMateria { Obligatoria, Electiva}
+
     public class Materia
     {
         public int codigo { get; set; }
         public string Nombre { get; set; }
         public int cant_creditos { get; set; }
-        public string tipo_materia { get; set; }
+        public TipoMateria tipo_materia { get; set; }
 
         public static List<Materia> listaMateria = new List<Materia>();
 
