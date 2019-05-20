@@ -35,7 +35,7 @@ namespace BibliotecaClases
 
         public override string ToString()
         {
-            return this.titulo;
+            return this.autor;
         }
     }
 }
