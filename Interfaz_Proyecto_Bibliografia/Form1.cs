@@ -28,5 +28,11 @@ namespace Interfaz_Proyecto_Bibliografia
             frmAlumno al = new frmAlumno();
             al.Show();
         }
+
+        private void tsmLibro_Click(object sender, EventArgs e)
+        {
+            frmLibro libro = new frmLibro();
+            libro.Show();
+        }
     }
 }
