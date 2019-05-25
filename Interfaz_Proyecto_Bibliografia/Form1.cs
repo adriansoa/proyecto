@@ -34,5 +34,22 @@ namespace Interfaz_Proyecto_Bibliografia
             frmLibro libro = new frmLibro();
             libro.Show();
         }
+
+        private void frmMenuPrincipal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gestionDeBibliografiasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGestionBibliografia gt = new frmGestionBibliografia();
+            gt.Show();
+        }
+
+        private void materiaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMateria mat = new frmMateria();
+            mat.Show();
+        }
     }
 }
