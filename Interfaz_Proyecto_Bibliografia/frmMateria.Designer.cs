@@ -127,21 +127,21 @@
             this.txtCodigo.Location = new System.Drawing.Point(154, 42);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(100, 20);
-            this.txtCodigo.TabIndex = 32;
+            this.txtCodigo.TabIndex = 0;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(154, 86);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 33;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtCantidadCreditos
             // 
             this.txtCantidadCreditos.Location = new System.Drawing.Point(154, 126);
             this.txtCantidadCreditos.Name = "txtCantidadCreditos";
             this.txtCantidadCreditos.Size = new System.Drawing.Size(100, 20);
-            this.txtCantidadCreditos.TabIndex = 34;
+            this.txtCantidadCreditos.TabIndex = 2;
             // 
             // rdbObligatoria
             // 
@@ -149,7 +149,7 @@
             this.rdbObligatoria.Location = new System.Drawing.Point(145, 169);
             this.rdbObligatoria.Name = "rdbObligatoria";
             this.rdbObligatoria.Size = new System.Drawing.Size(75, 17);
-            this.rdbObligatoria.TabIndex = 35;
+            this.rdbObligatoria.TabIndex = 3;
             this.rdbObligatoria.TabStop = true;
             this.rdbObligatoria.Text = "Obligatoria";
             this.rdbObligatoria.UseVisualStyleBackColor = true;
@@ -206,6 +206,7 @@
             this.Controls.Add(this.btnAgregar);
             this.Name = "frmMateria";
             this.Text = "Formulario de Materias";
+            this.Load += new System.EventHandler(this.frmMateria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgMaterias)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

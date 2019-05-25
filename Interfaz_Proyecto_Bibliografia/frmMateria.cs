@@ -120,5 +120,10 @@ namespace Interfaz_Proyecto_Bibliografia
                 }
             }
         }
+
+        private void frmMateria_Load(object sender, EventArgs e)
+        {
+            rdbObligatoria.Checked = true;
+        }
     }
 }

@@ -25,6 +25,13 @@ namespace Interfaz_Proyecto_Bibliografia
             */
         }
 
-    
+        
+
+        private void frmVentaBibliografias_Load(object sender, EventArgs e)
+        {
+            rdbContado.Checked = true;
+            cmbLibro.DataSource = Libro.ObtenerLibro();
+            cmbLibro.SelectedItem = null;
+        }
     }
 }

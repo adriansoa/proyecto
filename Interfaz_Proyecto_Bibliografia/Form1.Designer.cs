@@ -67,15 +67,16 @@
             // alumnoToolStripMenuItem
             // 
             this.alumnoToolStripMenuItem.Name = "alumnoToolStripMenuItem";
-            this.alumnoToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.alumnoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.alumnoToolStripMenuItem.Text = "Alumno";
             this.alumnoToolStripMenuItem.Click += new System.EventHandler(this.alumnoToolStripMenuItem_Click);
             // 
             // facultadToolStripMenuItem
             // 
             this.facultadToolStripMenuItem.Name = "facultadToolStripMenuItem";
-            this.facultadToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.facultadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.facultadToolStripMenuItem.Text = "Facultad";
+            this.facultadToolStripMenuItem.Click += new System.EventHandler(this.facultadToolStripMenuItem_Click);
             // 
             // materiaToolStripMenuItem
             // 
@@ -87,7 +88,7 @@
             // tsmLibro
             // 
             this.tsmLibro.Name = "tsmLibro";
-            this.tsmLibro.Size = new System.Drawing.Size(119, 22);
+            this.tsmLibro.Size = new System.Drawing.Size(152, 22);
             this.tsmLibro.Text = "Libro";
             this.tsmLibro.Click += new System.EventHandler(this.tsmLibro_Click);
             // 

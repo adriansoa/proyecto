@@ -73,5 +73,58 @@ namespace Interfaz_Proyecto_Bibliografia
         {
             ActualizarDataGrib();
         }
+
+        private void frmLibro_Load(object sender, EventArgs e)
+        {
+            cmbMateria.DataSource = null;
+            cmbMateria.DataSource = Materia.ObtenerMateria();
+            cmbMateria.SelectedItem = null;
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int index = dtgDetalleLibro.CurrentRow.Index;
+
+            if (index >= 0)
+            {
+                Libro.listaLibro[index] = ObtenerLibroFormulario();
+                ActualizarDataGrib();
+            }
+        }
+
+        private Libro ObtenerLibroFormulario()
+        {
+            Libro lib = new Libro();
+            libro.codigo = txtCodigo.Text;
+            libro.titulo = txtTitulo.Text;
+            libro.autor = txtAutor.Text;
+            libro.editorial = txtEditorial.Text;
+            libro.anho_publicacion = txtAnoPublicacion.Text;
+            libro.edicion = txtEdicion.Text;
+            libro.materia = (Materia)cmbMateria.SelectedItem;
+            libro.Precio = txtPrecio.Text;
+            Libro.listaLibro.Add(libro);
+
+            return lib;
+        }
+
+        private void dtgDetalleLibro_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Libro lib = (Libro)dtgDetalleLibro.CurrentRow.DataBoundItem;
+
+            if (lib != null)
+            {
+                txtCodigo.Text = Convert.ToString(lib.codigo);
+                txtTitulo.Text = lib.titulo;
+                txtAnoPublicacion.Text = lib.anho_publicacion;
+                txtAutor.Text = lib.autor;
+                txtEdicion.Text = lib.edicion;
+                txtEditorial.Text = lib.editorial;
+                txtPrecio.Text = lib.Precio;
+                cmbMateria.SelectedItem = lib.materia;
+                
+                
+            }
+        }
     }
 }

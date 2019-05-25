@@ -136,72 +136,72 @@
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(136, 47);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(96, 20);
-            this.txtCodigo.TabIndex = 9;
+            this.txtCodigo.TabIndex = 0;
             // 
             // txtTitulo
             // 
             this.txtTitulo.Location = new System.Drawing.Point(136, 96);
-            this.txtTitulo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTitulo.Margin = new System.Windows.Forms.Padding(2);
             this.txtTitulo.Name = "txtTitulo";
             this.txtTitulo.Size = new System.Drawing.Size(96, 20);
-            this.txtTitulo.TabIndex = 10;
+            this.txtTitulo.TabIndex = 1;
             // 
             // txtAutor
             // 
             this.txtAutor.Location = new System.Drawing.Point(136, 145);
-            this.txtAutor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAutor.Margin = new System.Windows.Forms.Padding(2);
             this.txtAutor.Name = "txtAutor";
             this.txtAutor.Size = new System.Drawing.Size(96, 20);
-            this.txtAutor.TabIndex = 11;
+            this.txtAutor.TabIndex = 2;
             // 
             // txtEditorial
             // 
             this.txtEditorial.Location = new System.Drawing.Point(136, 198);
-            this.txtEditorial.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEditorial.Margin = new System.Windows.Forms.Padding(2);
             this.txtEditorial.Name = "txtEditorial";
             this.txtEditorial.Size = new System.Drawing.Size(96, 20);
-            this.txtEditorial.TabIndex = 12;
+            this.txtEditorial.TabIndex = 3;
             // 
             // txtAnoPublicacion
             // 
             this.txtAnoPublicacion.Location = new System.Drawing.Point(136, 254);
-            this.txtAnoPublicacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAnoPublicacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtAnoPublicacion.Name = "txtAnoPublicacion";
             this.txtAnoPublicacion.Size = new System.Drawing.Size(96, 20);
-            this.txtAnoPublicacion.TabIndex = 13;
+            this.txtAnoPublicacion.TabIndex = 4;
             // 
             // txtEdicion
             // 
             this.txtEdicion.Location = new System.Drawing.Point(381, 54);
-            this.txtEdicion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEdicion.Margin = new System.Windows.Forms.Padding(2);
             this.txtEdicion.Name = "txtEdicion";
             this.txtEdicion.Size = new System.Drawing.Size(101, 20);
-            this.txtEdicion.TabIndex = 14;
+            this.txtEdicion.TabIndex = 5;
             // 
             // txtPrecio
             // 
             this.txtPrecio.Location = new System.Drawing.Point(381, 141);
-            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrecio.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(101, 20);
-            this.txtPrecio.TabIndex = 15;
+            this.txtPrecio.TabIndex = 7;
             // 
             // cmbMateria
             // 
             this.cmbMateria.FormattingEnabled = true;
             this.cmbMateria.Location = new System.Drawing.Point(381, 96);
-            this.cmbMateria.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbMateria.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMateria.Name = "cmbMateria";
             this.cmbMateria.Size = new System.Drawing.Size(101, 21);
-            this.cmbMateria.TabIndex = 16;
+            this.cmbMateria.TabIndex = 6;
             // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(603, 60);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(56, 19);
             this.btnAgregar.TabIndex = 17;
@@ -212,7 +212,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(603, 125);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(56, 19);
             this.btnEliminar.TabIndex = 18;
@@ -223,17 +223,18 @@
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(603, 193);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(56, 19);
+            this.btnModificar.Size = new System.Drawing.Size(64, 25);
             this.btnModificar.TabIndex = 19;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnCerrar
             // 
             this.btnCerrar.Location = new System.Drawing.Point(603, 266);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(56, 19);
             this.btnCerrar.TabIndex = 20;
@@ -245,11 +246,12 @@
             // 
             this.dtgDetalleLibro.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDetalleLibro.Location = new System.Drawing.Point(49, 364);
-            this.dtgDetalleLibro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgDetalleLibro.Margin = new System.Windows.Forms.Padding(2);
             this.dtgDetalleLibro.Name = "dtgDetalleLibro";
             this.dtgDetalleLibro.RowTemplate.Height = 24;
             this.dtgDetalleLibro.Size = new System.Drawing.Size(610, 122);
             this.dtgDetalleLibro.TabIndex = 21;
+            this.dtgDetalleLibro.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgDetalleLibro_CellContentClick);
             // 
             // btnConsultar
             // 
@@ -288,9 +290,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmLibro";
             this.Text = "frmLibro";
+            this.Load += new System.EventHandler(this.frmLibro_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleLibro)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -40,17 +40,17 @@
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.rdbContado = new System.Windows.Forms.RadioButton();
             this.rdbCredito = new System.Windows.Forms.RadioButton();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgDetalleVenta = new System.Windows.Forms.DataGridView();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.dtpFechaEmision = new System.Windows.Forms.DateTimePicker();
             this.lblBibliografia = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbLibro = new System.Windows.Forms.ComboBox();
             this.lblCantidad = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleVenta)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFechaEmision
@@ -127,7 +127,6 @@
             this.txtCI.Name = "txtCI";
             this.txtCI.Size = new System.Drawing.Size(100, 20);
             this.txtCI.TabIndex = 1;
-            
             // 
             // txtTelefono
             // 
@@ -158,13 +157,13 @@
             this.rdbCredito.Text = "Credito";
             this.rdbCredito.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dtgDetalleVenta
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(54, 230);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(500, 150);
-            this.dataGridView1.TabIndex = 13;
+            this.dtgDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgDetalleVenta.Location = new System.Drawing.Point(54, 230);
+            this.dtgDetalleVenta.Name = "dtgDetalleVenta";
+            this.dtgDetalleVenta.Size = new System.Drawing.Size(500, 150);
+            this.dtgDetalleVenta.TabIndex = 13;
             // 
             // btnAgregar
             // 
@@ -222,13 +221,13 @@
             this.lblBibliografia.TabIndex = 19;
             this.lblBibliografia.Text = "Bibliografia:";
             // 
-            // comboBox1
+            // cmbLibro
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(167, 149);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cmbLibro.FormattingEnabled = true;
+            this.cmbLibro.Location = new System.Drawing.Point(167, 149);
+            this.cmbLibro.Name = "cmbLibro";
+            this.cmbLibro.Size = new System.Drawing.Size(100, 21);
+            this.cmbLibro.TabIndex = 4;
             // 
             // lblCantidad
             // 
@@ -239,28 +238,28 @@
             this.lblCantidad.TabIndex = 21;
             this.lblCantidad.Text = "Cantidad: ";
             // 
-            // textBox1
+            // txtCantidad
             // 
-            this.textBox1.Location = new System.Drawing.Point(167, 184);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtCantidad.Location = new System.Drawing.Point(167, 184);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
+            this.txtCantidad.TabIndex = 5;
             // 
             // frmVentaBibliografias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 486);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCantidad);
             this.Controls.Add(this.lblCantidad);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbLibro);
             this.Controls.Add(this.lblBibliografia);
             this.Controls.Add(this.dtpFechaEmision);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtgDetalleVenta);
             this.Controls.Add(this.rdbCredito);
             this.Controls.Add(this.rdbContado);
             this.Controls.Add(this.txtTelefono);
@@ -275,7 +274,8 @@
             this.Controls.Add(this.lblFechaEmision);
             this.Name = "frmVentaBibliografias";
             this.Text = "Venta de Bibliografias";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.frmVentaBibliografias_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleVenta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -295,15 +295,15 @@
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.RadioButton rdbContado;
         private System.Windows.Forms.RadioButton rdbCredito;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgDetalleVenta;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DateTimePicker dtpFechaEmision;
         private System.Windows.Forms.Label lblBibliografia;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbLibro;
         private System.Windows.Forms.Label lblCantidad;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCantidad;
     }
 }

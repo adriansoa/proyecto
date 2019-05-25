@@ -51,5 +51,12 @@ namespace Interfaz_Proyecto_Bibliografia
             frmMateria mat = new frmMateria();
             mat.Show();
         }
+
+        private void facultadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFacultad facu = new frmFacultad();
+            facu.Show();
+
+        }
     }
 }
