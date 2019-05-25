@@ -68,5 +68,10 @@ namespace Interfaz_Proyecto_Bibliografia
         {
             this.Show();
         }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            ActualizarDataGrib();
+        }
     }
 }
