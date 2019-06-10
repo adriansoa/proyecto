@@ -43,7 +43,7 @@ namespace Interfaz_Proyecto_Bibliografia
             al.fecha_Nacimiento = dtpFechaNacimiento.Value.Date;
             al.telefono = txtTelefono.Text;
             al.email = txtEmail.Text;
-            al.Promocion = txtPromocion.Text;
+            al.Promocion = Convert.ToInt32(txtPromocion.Text);
 
             Alumno.AgregarAlumno(al);
             

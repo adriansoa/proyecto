@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenuPrincipal));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.alumnoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,28 +68,28 @@
             // alumnoToolStripMenuItem
             // 
             this.alumnoToolStripMenuItem.Name = "alumnoToolStripMenuItem";
-            this.alumnoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.alumnoToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.alumnoToolStripMenuItem.Text = "Alumno";
             this.alumnoToolStripMenuItem.Click += new System.EventHandler(this.alumnoToolStripMenuItem_Click);
             // 
             // facultadToolStripMenuItem
             // 
             this.facultadToolStripMenuItem.Name = "facultadToolStripMenuItem";
-            this.facultadToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.facultadToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.facultadToolStripMenuItem.Text = "Facultad";
             this.facultadToolStripMenuItem.Click += new System.EventHandler(this.facultadToolStripMenuItem_Click);
             // 
             // materiaToolStripMenuItem
             // 
             this.materiaToolStripMenuItem.Name = "materiaToolStripMenuItem";
-            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.materiaToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.materiaToolStripMenuItem.Text = "Materia";
             this.materiaToolStripMenuItem.Click += new System.EventHandler(this.materiaToolStripMenuItem_Click);
             // 
             // tsmLibro
             // 
             this.tsmLibro.Name = "tsmLibro";
-            this.tsmLibro.Size = new System.Drawing.Size(152, 22);
+            this.tsmLibro.Size = new System.Drawing.Size(119, 22);
             this.tsmLibro.Text = "Libro";
             this.tsmLibro.Click += new System.EventHandler(this.tsmLibro_Click);
             // 
@@ -119,8 +120,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMenuPrincipal";
             this.Text = "Sistema de Gestion y Venta de Bibliografias";

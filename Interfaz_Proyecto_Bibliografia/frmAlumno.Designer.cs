@@ -141,49 +141,50 @@
             this.txtNroDocumento.Location = new System.Drawing.Point(142, 25);
             this.txtNroDocumento.Name = "txtNroDocumento";
             this.txtNroDocumento.Size = new System.Drawing.Size(100, 20);
-            this.txtNroDocumento.TabIndex = 9;
+            this.txtNroDocumento.TabIndex = 0;
+            this.txtNroDocumento.Text = " ";
             // 
             // txtDireccion
             // 
             this.txtDireccion.Location = new System.Drawing.Point(394, 25);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(100, 20);
-            this.txtDireccion.TabIndex = 10;
+            this.txtDireccion.TabIndex = 5;
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(142, 98);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(100, 20);
-            this.txtNombre.TabIndex = 11;
+            this.txtNombre.TabIndex = 2;
             // 
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(142, 144);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(100, 20);
-            this.txtApellido.TabIndex = 12;
+            this.txtApellido.TabIndex = 3;
             // 
             // txtPromocion
             // 
             this.txtPromocion.Location = new System.Drawing.Point(394, 144);
             this.txtPromocion.Name = "txtPromocion";
             this.txtPromocion.Size = new System.Drawing.Size(100, 20);
-            this.txtPromocion.TabIndex = 13;
+            this.txtPromocion.TabIndex = 8;
             // 
             // txtTelefono
             // 
             this.txtTelefono.Location = new System.Drawing.Point(394, 64);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(100, 20);
-            this.txtTelefono.TabIndex = 14;
+            this.txtTelefono.TabIndex = 6;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(394, 98);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(100, 20);
-            this.txtEmail.TabIndex = 15;
+            this.txtEmail.TabIndex = 7;
             // 
             // cmbTipoDocumento
             // 
@@ -191,7 +192,7 @@
             this.cmbTipoDocumento.Location = new System.Drawing.Point(142, 64);
             this.cmbTipoDocumento.Name = "cmbTipoDocumento";
             this.cmbTipoDocumento.Size = new System.Drawing.Size(100, 21);
-            this.cmbTipoDocumento.TabIndex = 16;
+            this.cmbTipoDocumento.TabIndex = 1;
             // 
             // dtpFechaNacimiento
             // 
@@ -201,7 +202,7 @@
             this.dtpFechaNacimiento.MinDate = new System.DateTime(2019, 1, 1, 0, 0, 0, 0);
             this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             this.dtpFechaNacimiento.Size = new System.Drawing.Size(100, 20);
-            this.dtpFechaNacimiento.TabIndex = 17;
+            this.dtpFechaNacimiento.TabIndex = 4;
             // 
             // dtgAlumno
             // 
