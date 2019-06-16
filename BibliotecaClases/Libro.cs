@@ -21,7 +21,7 @@ namespace BibliotecaClases
 
         public static void AgregarLibro(Libro l)
         {
-            listaLibro.Add(l);
+           listaLibro.Add(l);
         }
 
         public static void EliminarLibro(Libro l)

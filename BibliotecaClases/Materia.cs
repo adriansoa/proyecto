@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,8 +22,30 @@ namespace BibliotecaClases
 
         public static void AgregarMateria(Materia m)
         {
-            listaMateria.Add(m);
+            using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+            {
+                con.Open();
+
+                string sentenciasql = @"INSERT INTO Materia (Nombre, Cantidad_Creditos,Tipo_Materia)
+                                        VALUES (@Nombre,@Cantidad_Creditos,@Tipo_Materia)";
+                SqlCommand cmd = new SqlCommand(sentenciasql, con);
+                SqlParameter p1 = new SqlParameter("@Nombre", m.Nombre);
+                SqlParameter p2 = new SqlParameter("@Cantidad_Creditos", m.cant_creditos);
+                SqlParameter p3 = new SqlParameter("@Tipo_Materia", m.tipo_materia);
+               
+                p1.SqlDbType = SqlDbType.VarChar;
+                p2.SqlDbType = SqlDbType.VarChar;
+                p3.SqlDbType = SqlDbType.Int;
+               
+                cmd.Parameters.Add(p1);
+                cmd.Parameters.Add(p2);
+                cmd.Parameters.Add(p3);
+                
+                int n = cmd.ExecuteNonQuery();
+            }
+
         }
+
 
         public static void EliminarMateria(Materia m)
         {
