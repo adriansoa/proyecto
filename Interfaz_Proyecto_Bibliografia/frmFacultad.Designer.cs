@@ -45,77 +45,84 @@
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(118, 53);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCodigo.Location = new System.Drawing.Point(157, 65);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(96, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(127, 22);
             this.txtCodigo.TabIndex = 10;
             // 
             // txtAñoInicio
             // 
-            this.txtAñoInicio.Location = new System.Drawing.Point(118, 150);
-            this.txtAñoInicio.Margin = new System.Windows.Forms.Padding(2);
+            this.txtAñoInicio.Location = new System.Drawing.Point(157, 185);
+            this.txtAñoInicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtAñoInicio.Name = "txtAñoInicio";
-            this.txtAñoInicio.Size = new System.Drawing.Size(96, 20);
+            this.txtAñoInicio.Size = new System.Drawing.Size(127, 22);
             this.txtAñoInicio.TabIndex = 11;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(118, 100);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombre.Location = new System.Drawing.Point(157, 123);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(96, 20);
+            this.txtNombre.Size = new System.Drawing.Size(127, 22);
             this.txtNombre.TabIndex = 12;
             // 
             // dtgFacultad
             // 
             this.dtgFacultad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgFacultad.Location = new System.Drawing.Point(35, 264);
+            this.dtgFacultad.Location = new System.Drawing.Point(47, 325);
+            this.dtgFacultad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgFacultad.Name = "dtgFacultad";
-            this.dtgFacultad.Size = new System.Drawing.Size(458, 150);
+            this.dtgFacultad.Size = new System.Drawing.Size(611, 185);
             this.dtgFacultad.TabIndex = 19;
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(391, 183);
+            this.btnLimpiar.Location = new System.Drawing.Point(521, 225);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.Size = new System.Drawing.Size(100, 28);
             this.btnLimpiar.TabIndex = 27;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(391, 126);
+            this.btnModificar.Location = new System.Drawing.Point(521, 155);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(100, 28);
             this.btnModificar.TabIndex = 26;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(391, 70);
+            this.btnEliminar.Location = new System.Drawing.Point(521, 86);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(100, 28);
             this.btnEliminar.TabIndex = 25;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(391, 28);
+            this.btnAgregar.Location = new System.Drawing.Point(521, 34);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(100, 28);
             this.btnAgregar.TabIndex = 24;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(228, 219);
+            this.btnConsultar.Location = new System.Drawing.Point(304, 270);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultar.Size = new System.Drawing.Size(100, 28);
             this.btnConsultar.TabIndex = 28;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -123,35 +130,38 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(32, 60);
+            this.lblCodigo.Location = new System.Drawing.Point(43, 74);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(40, 13);
+            this.lblCodigo.Size = new System.Drawing.Size(52, 17);
             this.lblCodigo.TabIndex = 29;
             this.lblCodigo.Text = "Codigo";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(32, 107);
+            this.lblNombre.Location = new System.Drawing.Point(43, 132);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(58, 17);
             this.lblNombre.TabIndex = 30;
             this.lblNombre.Text = "Nombre";
             // 
             // lblAñoInicio
             // 
             this.lblAñoInicio.AutoSize = true;
-            this.lblAñoInicio.Location = new System.Drawing.Point(32, 157);
+            this.lblAñoInicio.Location = new System.Drawing.Point(43, 193);
+            this.lblAñoInicio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAñoInicio.Name = "lblAñoInicio";
-            this.lblAñoInicio.Size = new System.Drawing.Size(54, 13);
+            this.lblAñoInicio.Size = new System.Drawing.Size(69, 17);
             this.lblAñoInicio.TabIndex = 31;
             this.lblAñoInicio.Text = "Año Inicio";
             // 
             // frmFacultad
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(582, 450);
+            this.ClientSize = new System.Drawing.Size(776, 554);
             this.Controls.Add(this.lblAñoInicio);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
@@ -164,6 +174,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtAñoInicio);
             this.Controls.Add(this.txtCodigo);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmFacultad";
             this.Text = "Formulario de Facultad";
             this.Load += new System.EventHandler(this.frmFacultad_Load);

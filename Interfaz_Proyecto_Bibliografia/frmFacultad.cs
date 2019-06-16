@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BibliotecaClases;
 
 namespace Interfaz_Proyecto_Bibliografia
 {
@@ -21,5 +22,26 @@ namespace Interfaz_Proyecto_Bibliografia
         {
 
         }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            Facultad fac = new Facultad();
+            fac.nombre = txtNombre.Text;
+            fac.anho_fundacion = Convert.ToInt32(txtAñoInicio.Text);
+
+            Facultad.AgregarFacultad(fac);
+
+            MessageBox.Show("La Facultad ha sido agregado con exito");
+            LimpiarFormulario();
+        }
+
+        private void LimpiarFormulario()
+        {
+            txtCodigo.Text = "";
+            txtNombre.Text = "";
+            txtAñoInicio.Text = "";
+        }
+
+       
     }
 }
