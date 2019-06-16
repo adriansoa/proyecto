@@ -11,6 +11,7 @@ namespace BibliotecaClases
     public class Alumno : Persona
     {
         public int Promocion;
+        
 
         public override string ToString()
         {

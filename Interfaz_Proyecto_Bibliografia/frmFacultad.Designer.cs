@@ -71,45 +71,49 @@
             // 
             this.dtgFacultad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgFacultad.Location = new System.Drawing.Point(47, 325);
-            this.dtgFacultad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgFacultad.Margin = new System.Windows.Forms.Padding(4);
             this.dtgFacultad.Name = "dtgFacultad";
             this.dtgFacultad.Size = new System.Drawing.Size(611, 185);
             this.dtgFacultad.TabIndex = 19;
+            this.dtgFacultad.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgFacultad_CellContentClick);
             // 
             // btnLimpiar
             // 
             this.btnLimpiar.Location = new System.Drawing.Point(521, 225);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(100, 28);
             this.btnLimpiar.TabIndex = 27;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(521, 155);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(100, 28);
             this.btnModificar.TabIndex = 26;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(521, 86);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 28);
             this.btnEliminar.TabIndex = 25;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(521, 34);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 28);
             this.btnAgregar.TabIndex = 24;
@@ -120,12 +124,13 @@
             // btnConsultar
             // 
             this.btnConsultar.Location = new System.Drawing.Point(304, 270);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(100, 28);
             this.btnConsultar.TabIndex = 28;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // lblCodigo
             // 
@@ -174,7 +179,7 @@
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtAñoInicio);
             this.Controls.Add(this.txtCodigo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmFacultad";
             this.Text = "Formulario de Facultad";
             this.Load += new System.EventHandler(this.frmFacultad_Load);

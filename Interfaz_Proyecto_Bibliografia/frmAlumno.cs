@@ -20,9 +20,10 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void frmAlumno_Load(object sender, EventArgs e)
         {
-            ActualizarDataGrid();
+            
             cmbTipoDocumento.DataSource = Enum.GetValues(typeof(Persona.TipoDocumento));
             cmbTipoDocumento.SelectedItem = null;
+            //ActualizarDataGrid();
         }
 
         private void ActualizarDataGrid()
