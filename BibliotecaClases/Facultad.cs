@@ -12,7 +12,7 @@ namespace BibliotecaClases
     {
         public int codigo { get; set; }
         public string nombre { get; set; }
-        public int anho_fundacion { get; set; }
+        public string anho_fundacion { get; set; }
 
         public static List<Facultad> listaFacultad = new List<Facultad>();
 
@@ -58,7 +58,7 @@ namespace BibliotecaClases
             SqlParameter p2 = new SqlParameter("@Anho_Fundacion", this.anho_fundacion);
 
             p1.SqlDbType = SqlDbType.VarChar;
-            p2.SqlDbType = SqlDbType.Int;
+            p2.SqlDbType = SqlDbType.VarChar;
 
             cmd.Parameters.Add(p1);
             cmd.Parameters.Add(p2);
@@ -111,7 +111,7 @@ namespace BibliotecaClases
                     facultad = new Facultad();
                     facultad.codigo = elLectorDeDatos.GetInt32(0);
                     facultad.nombre = elLectorDeDatos.GetString(1);
-                    facultad.anho_fundacion = elLectorDeDatos.GetInt32(2);
+                    facultad.anho_fundacion = elLectorDeDatos.GetString(2);
 
                     listaFacultad.Add(facultad);
                 }

@@ -40,6 +40,7 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblAñoInicio = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgFacultad)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +76,7 @@
             this.dtgFacultad.Name = "dtgFacultad";
             this.dtgFacultad.Size = new System.Drawing.Size(611, 185);
             this.dtgFacultad.TabIndex = 19;
-            this.dtgFacultad.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgFacultad_CellContentClick);
+
             // 
             // btnLimpiar
             // 
@@ -162,11 +163,22 @@
             this.lblAñoInicio.TabIndex = 31;
             this.lblAñoInicio.Text = "Año Inicio";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(47, 270);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(100, 28);
+            this.btnBuscar.TabIndex = 32;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // frmFacultad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(776, 554);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.lblAñoInicio);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblCodigo);
@@ -203,5 +215,6 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblAñoInicio;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

@@ -34,7 +34,7 @@ namespace Interfaz_Proyecto_Bibliografia
         {
             Facultad fac = new Facultad();
             fac.nombre = txtNombre.Text;
-            fac.anho_fundacion = Convert.ToInt32(txtAñoInicio.Text);
+            fac.anho_fundacion = txtAñoInicio.Text;
 
             Facultad.AgregarFacultad(fac);
 
@@ -72,13 +72,23 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            int index = dtgFacultad.CurrentRow.Index;
+            //int index = dtgFacultad.CurrentRow.Index;
 
-            if(index >= 0)
+            //if(index >= 0)
+            //{
+            //    Facultad.listaFacultad[index] = ObtenerFacultadFormulario();
+            //    ActualizarDataGrib();
+            //}
+            using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
             {
-                Facultad.listaFacultad[index] = ObtenerFacultadFormulario();
-                ActualizarDataGrib();
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Facultad SET Nombre='" + this.txtNombre.Text + "',Anho_Fundacion='" + this.txtAñoInicio.Text + "' WHERE Id=" + Convert.ToInt32(this.txtCodigo.Text + ""), con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Actualizado el registro");
+
+
             }
+
 
         }
 
@@ -86,21 +96,11 @@ namespace Interfaz_Proyecto_Bibliografia
         {
             Facultad facultad = new Facultad();
             facultad.nombre = txtNombre.Text;
-            facultad.anho_fundacion = Convert.ToInt32(txtAñoInicio.Text);
+            facultad.anho_fundacion = txtAñoInicio.Text;
 
             return facultad;
         }
 
-        private void dtgFacultad_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Facultad facultad = (Facultad)dtgFacultad.CurrentRow.DataBoundItem;
-
-            if(facultad != null)
-            {
-                facultad.nombre = txtNombre.Text;
-                facultad.anho_fundacion = Convert.ToInt32(txtAñoInicio.Text);
-            }
-        }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -122,6 +122,23 @@ namespace Interfaz_Proyecto_Bibliografia
 
             }
 
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand("Select * from Facultad WHERE Id=@Id", con);
+                comando.Parameters.AddWithValue("@Id", txtCodigo.Text);
+                SqlDataReader registro = comando.ExecuteReader();
+                if (registro.Read())
+                {
+                    txtNombre.Text = registro["Nombre"].ToString();
+                    txtAñoInicio.Text = registro["Anho_Fundacion"].ToString();
+                }
+
+            }
         }
     }
 }
