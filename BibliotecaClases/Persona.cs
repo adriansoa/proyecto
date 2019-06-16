@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BibliotecaClases
 {
-   public abstract class Persona
+    public abstract class Persona
     {
         public enum TipoDocumento
         {
@@ -15,6 +15,7 @@ namespace BibliotecaClases
             DNI
         }
 
+        public int Id { get; set; }
         public string nro_documento { get; set; }
         public TipoDocumento tipo_documento { get; set; }
         public string nombre { get; set; }

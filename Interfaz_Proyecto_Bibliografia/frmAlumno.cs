@@ -12,6 +12,7 @@ namespace Interfaz_Proyecto_Bibliografia
 {
     public partial class frmAlumno : Form
     {
+        Alumno alumno;
         public frmAlumno()
         {
             InitializeComponent();
@@ -24,12 +25,10 @@ namespace Interfaz_Proyecto_Bibliografia
             cmbTipoDocumento.SelectedItem = null;
         }
 
-
-
         private void ActualizarDataGrid()
         {
             dtgAlumno.DataSource = null;
-            dtgAlumno.DataSource = Alumno.listadoAlumnos;
+            dtgAlumno.DataSource = Alumno.ObtenerAlumnos();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -46,7 +45,7 @@ namespace Interfaz_Proyecto_Bibliografia
             al.Promocion = Convert.ToInt32(txtPromocion.Text);
 
             Alumno.AgregarAlumno(al);
-            
+
             MessageBox.Show("El alumno ha sido agregado con éxito");
             LimpiarFormulario();
         }
@@ -68,6 +67,69 @@ namespace Interfaz_Proyecto_Bibliografia
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             ActualizarDataGrid();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+            Alumno a = (Alumno)dtgAlumno.CurrentRow.DataBoundItem;
+            if (a != null)
+            {
+                Alumno.listadoAlumnos.Remove(a);
+            }
+            ActualizarDataGrid();
+
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            int index = dtgAlumno.CurrentRow.Index;
+
+            if (index >= 0)
+            {
+                Alumno.listadoAlumnos[index] = ObtenerAlumnoFormulario();
+                ActualizarDataGrid();
+            }
+        }
+
+        private Alumno ObtenerAlumnoFormulario()
+        {
+            Alumno al = new Alumno();
+            al.tipo_documento = (Persona.TipoDocumento)cmbTipoDocumento.SelectedItem;
+            al.nro_documento = txtNroDocumento.Text;
+            al.nombre = txtNombre.Text;
+            al.apellido = txtApellido.Text;
+            al.direccion = txtDireccion.Text;
+            al.fecha_Nacimiento = dtpFechaNacimiento.Value.Date;
+            al.telefono = txtTelefono.Text;
+            al.email = txtEmail.Text;
+            al.Promocion = Convert.ToInt32(txtPromocion.Text);
+
+            return al;
+        }
+
+        private void dtgAlumno_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            Alumno al = (Alumno)dtgAlumno.CurrentRow.DataBoundItem;
+
+            if (al != null)
+            {
+                al.tipo_documento = (Persona.TipoDocumento)cmbTipoDocumento.SelectedItem;
+                al.nro_documento = txtNroDocumento.Text;
+                al.nombre = txtNombre.Text;
+                al.apellido = txtApellido.Text;
+                al.direccion = txtDireccion.Text;
+                al.fecha_Nacimiento = dtpFechaNacimiento.Value.Date;
+                al.telefono = txtTelefono.Text;
+                al.email = txtEmail.Text;
+                al.Promocion = Convert.ToInt32(txtPromocion.Text);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario();
         }
     }
 }
