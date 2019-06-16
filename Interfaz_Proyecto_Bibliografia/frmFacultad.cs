@@ -27,7 +27,7 @@ namespace Interfaz_Proyecto_Bibliografia
         private void ActualizarDataGrib()
         {
             dtgFacultad.DataSource = null;
-            dtgFacultad.DataSource = Facultad.ObtenerFacultad();
+            dtgFacultad.DataSource = Facultad.listaFacultad;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -51,12 +51,23 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Facultad facultad = (Facultad)dtgFacultad.CurrentRow.DataBoundItem;
-            if(facultad != null)
+            //Facultad facultad = (Facultad)dtgFacultad.CurrentRow.DataBoundItem;
+            //if(facultad != null)
+            //{
+            //    Facultad.listaFacultad.Remove(facultad);
+            //}
+            //ActualizarDataGrib();
+
+            using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
             {
-                Facultad.listaFacultad.Remove(facultad);
+                con.Open();
+                string query = "DELETE FROM Facultad WHERE Id=@Id";
+                SqlCommand comando = new SqlCommand(query, con);
+                comando.Parameters.AddWithValue("@Id", txtCodigo.Text);
+                comando.ExecuteNonQuery();
+                MessageBox.Show("El registro fue eliminado");
+
             }
-            ActualizarDataGrib();
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

@@ -100,7 +100,7 @@ namespace BibliotecaClases
             using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = "Select * fom Facultad";
+                string textoCmd = "Select * from Facultad";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
