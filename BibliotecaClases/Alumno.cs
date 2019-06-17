@@ -71,7 +71,7 @@ namespace BibliotecaClases
             using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = "UPDATE alumno SET Nro_Documento =@Nro_Documento, Tipo_Documento = @Tipo_Documento, Nombre = @Nombre, Apellido = @Apellido, Fecha_Nacimiento = @Fecha_Nacimiento, Direccion = @Direccion, Telefono= @Telefono, Email = @Email,  Promocion = @Promocion WHERE Id = @Id";
+                string textoCmd = "UPDATE Alumno SET Nro_Documento =@Nro_Documento, Tipo_Documento = @Tipo_Documento, Nombre = @Nombre, Apellido = @Apellido, Fecha_Nacimiento = @Fecha_Nacimiento, Direccion = @Direccion, Telefono= @Telefono, Email = @Email,  Promocion = @Promocion WHERE Id = @Id";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
                 cmd = alumno.ObtenerParametros(cmd, true);
 
@@ -80,7 +80,7 @@ namespace BibliotecaClases
             }
         }
 
-        private SqlCommand ObtenerParametros(SqlCommand cmd, Boolean id = false)
+        private SqlCommand ObtenerParametros(SqlCommand cmd, Boolean Id = false)
         {
             SqlParameter p1 = new SqlParameter("@Nro_Documento", this.nro_documento);
             SqlParameter p2 = new SqlParameter("@Tipo_Documento", this.tipo_documento);
@@ -112,7 +112,7 @@ namespace BibliotecaClases
             cmd.Parameters.Add(p8);
             cmd.Parameters.Add(p9);
 
-            if (id == true) cmd = ObtenerParametroId(cmd);
+            if (Id == true) cmd = ObtenerParametroId(cmd);
             return cmd;
         }
 
@@ -120,9 +120,9 @@ namespace BibliotecaClases
         {
             Alumno a = new Alumno();
 
-            SqlParameter p9 = new SqlParameter("@Id", a.Id);
-            p9.SqlDbType = SqlDbType.Int;
-            cmd.Parameters.Add(p9);
+            SqlParameter p10 = new SqlParameter("@Id", a.Id);
+            p10.SqlDbType = SqlDbType.Int;
+            cmd.Parameters.Add(p10);
             return cmd;
         }
 

@@ -13,7 +13,7 @@ namespace Interfaz_Proyecto_Bibliografia
 {
     public partial class frmAlumno : Form
     {
-        Alumno alumno;
+        //Alumno alumno;
         public frmAlumno()
         {
             InitializeComponent();
@@ -21,10 +21,9 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void frmAlumno_Load(object sender, EventArgs e)
         {
-            
+            //ActualizarDataGrid();
             cmbTipoDocumento.DataSource = Enum.GetValues(typeof(Persona.TipoDocumento));
             cmbTipoDocumento.SelectedItem = null;
-            //ActualizarDataGrid();
         }
 
         private void ActualizarDataGrid()
@@ -45,12 +44,12 @@ namespace Interfaz_Proyecto_Bibliografia
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Alumno al = new Alumno();
-            al.tipo_documento = (Persona.TipoDocumento)cmbTipoDocumento.SelectedItem;
             al.nro_documento = txtNroDocumento.Text;
+            al.tipo_documento = (Persona.TipoDocumento)cmbTipoDocumento.SelectedItem;
             al.nombre = txtNombre.Text;
             al.apellido = txtApellido.Text;
-            al.direccion = txtDireccion.Text;
             al.fecha_Nacimiento = dtpFechaNacimiento.Value.Date;
+            al.direccion = txtDireccion.Text;
             al.telefono = txtTelefono.Text;
             al.email = txtEmail.Text;
             al.Promocion = Convert.ToInt32(txtPromocion.Text);
@@ -63,6 +62,7 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void LimpiarFormulario()
         {
+            txtId.Text = "";
             txtNombre.Text = "";
             txtApellido.Text = "";
             txtDireccion.Text = "";
@@ -82,36 +82,63 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
-            Alumno a = (Alumno)dtgAlumno.CurrentRow.DataBoundItem;
-            if (a != null)
+            using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
             {
-                Alumno.listadoAlumnos.Remove(a);
-            }
-            ActualizarDataGrid();
+                con.Open();
+                string query = "DELETE FROM Alumno WHERE Id=@Id";
+                SqlCommand comando = new SqlCommand(query, con);
+                if (txtId.Text == "")
+                {
+                    MessageBox.Show("Favor complete el campo Id con el codigo del registro que desea eliminar!");
+                }
+                else
+                {
+                    comando.Parameters.AddWithValue("@Id", txtId.Text);
+                    comando.ExecuteNonQuery();
+                    MessageBox.Show("El registro fue eliminado");
+                    ActualizarDataGrid();
+                }
 
+
+            }
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            int index = dtgAlumno.CurrentRow.Index;
+            /* int index = dtgAlumno.CurrentRow.Index;
 
             if (index >= 0)
             {
                 Alumno.listadoAlumnos[index] = ObtenerAlumnoFormulario();
                 ActualizarDataGrid();
+            }*/
+
+            using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Alumno SET Nro_Documento='" + this.txtNroDocumento.Text +
+                 "',Tipo_Documento='" + this.cmbTipoDocumento.Text +
+                "',Nombre='" + this.txtNombre.Text + "',Apellido='" + this.txtApellido.Text +
+                "',Fecha_Nacimiento='" + this.dtpFechaNacimiento.Text + "',Direccion='" + this.txtDireccion.Text +
+                "',Telefono='" + this.txtTelefono.Text + "',Email='" + this.txtEmail.Text + "',Promocion='" + this.txtPromocion.Text
+                + "' WHERE Id=" + Convert.ToInt32(this.txtNroDocumento.Text + ""), con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Actualizado el registro");
+                ActualizarDataGrid();
+
             }
         }
+
 
         private Alumno ObtenerAlumnoFormulario()
         {
             Alumno al = new Alumno();
-            al.tipo_documento = (Persona.TipoDocumento)cmbTipoDocumento.SelectedItem;
             al.nro_documento = txtNroDocumento.Text;
+            al.tipo_documento = (Persona.TipoDocumento)cmbTipoDocumento.SelectedItem;
             al.nombre = txtNombre.Text;
             al.apellido = txtApellido.Text;
-            al.direccion = txtDireccion.Text;
             al.fecha_Nacimiento = dtpFechaNacimiento.Value.Date;
+            al.direccion = txtDireccion.Text;
             al.telefono = txtTelefono.Text;
             al.email = txtEmail.Text;
             al.Promocion = Convert.ToInt32(txtPromocion.Text);
@@ -119,24 +146,7 @@ namespace Interfaz_Proyecto_Bibliografia
             return al;
         }
 
-        private void dtgAlumno_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-            Alumno al = (Alumno)dtgAlumno.CurrentRow.DataBoundItem;
-
-            if (al != null)
-            {
-                al.tipo_documento = (Persona.TipoDocumento)cmbTipoDocumento.SelectedItem;
-                al.nro_documento = txtNroDocumento.Text;
-                al.nombre = txtNombre.Text;
-                al.apellido = txtApellido.Text;
-                al.direccion = txtDireccion.Text;
-                al.fecha_Nacimiento = dtpFechaNacimiento.Value.Date;
-                al.telefono = txtTelefono.Text;
-                al.email = txtEmail.Text;
-                al.Promocion = Convert.ToInt32(txtPromocion.Text);
-            }
-        }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
