@@ -13,7 +13,7 @@ namespace Interfaz_Proyecto_Bibliografia
 {
     public partial class frmAlumno : Form
     {
-        //Alumno alumno;
+        
         public frmAlumno()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void frmAlumno_Load(object sender, EventArgs e)
         {
-            //ActualizarDataGrid();
+            
             cmbTipoDocumento.DataSource = Enum.GetValues(typeof(Persona.TipoDocumento));
             cmbTipoDocumento.SelectedItem = null;
         }
@@ -58,6 +58,7 @@ namespace Interfaz_Proyecto_Bibliografia
 
             MessageBox.Show("El alumno ha sido agregado con éxito");
             LimpiarFormulario();
+            ActualizarDataGrid();
         }
 
         private void LimpiarFormulario()
@@ -85,7 +86,7 @@ namespace Interfaz_Proyecto_Bibliografia
             using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string query = "DELETE FROM Alumno WHERE Id=@Id";
+                string query = "DELETE FROM Alumno WHERE Codigo=@Id";
                 SqlCommand comando = new SqlCommand(query, con);
                 if (txtId.Text == "")
                 {
@@ -97,6 +98,7 @@ namespace Interfaz_Proyecto_Bibliografia
                     comando.ExecuteNonQuery();
                     MessageBox.Show("El registro fue eliminado");
                     ActualizarDataGrid();
+                    txtId.Text = "";
                 }
 
 
@@ -105,28 +107,70 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            /* int index = dtgAlumno.CurrentRow.Index;
+            if (dtgAlumno.Rows.Count == 0)
+            {
+                MessageBox.Show("Favor seleccione una fila!!");
+            }
+            else
+            {
+                int codigo = Convert.ToInt32(dtgAlumno.CurrentRow.Cells[0].Value);
+                using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+                {
+                    con.Open();
 
-           if (index >= 0)
-           {
-               Alumno.listadoAlumnos[index] = ObtenerAlumnoFormulario();
-               ActualizarDataGrid();
-           }*/
+                    SqlCommand cmd = new SqlCommand("UPDATE Alumno SET Nro_Documento ='" + this.txtNroDocumento.Text +
+                     "',Tipo_Documento='" + this.cmbTipoDocumento.Text +
+                    "',Nombre='" + this.txtNombre.Text + "',Apellido='" + this.txtApellido.Text +
+                    "',Fecha_Nacimiento='" + this.dtpFechaNacimiento.Text + "',Direccion='" + this.txtDireccion.Text +
+                    "',Telefono='" + this.txtTelefono.Text + "',Email='" + this.txtEmail.Text + "',Promocion='" + this.txtPromocion.Text
+                    + "' WHERE Codigo= " + codigo +"", con);
+                    int resultado = cmd.ExecuteNonQuery();
 
+                    if (resultado != -1)
+                    {
+                        MessageBox.Show("Registro actualizado exitosamente!!" + resultado);
+                        ActualizarDataGrid();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo actualizar el registro!!");
+                    }
+                }
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /* 
             using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
             {
                 con.Open();
+
                 SqlCommand cmd = new SqlCommand("UPDATE Alumno SET Nro_Documento ='" + this.txtNroDocumento.Text +
                  "',Tipo_Documento='" + this.cmbTipoDocumento.Text +
                 "',Nombre='" + this.txtNombre.Text + "',Apellido='" + this.txtApellido.Text +
                 "',Fecha_Nacimiento='" + this.dtpFechaNacimiento.Text + "',Direccion='" + this.txtDireccion.Text +
                 "',Telefono='" + this.txtTelefono.Text + "',Email='" + this.txtEmail.Text + "',Promocion='" + this.txtPromocion.Text
-                + "' WHERE Id= " + Convert.ToInt32(this.txtId.Text + ""), con);
+                + "' WHERE Codigo= " + Convert.ToInt32(this.txtId.Text + ""), con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Actualizado el registro");
                 ActualizarDataGrid();
 
-            }
+            }*/
         }
 
 
@@ -151,6 +195,38 @@ namespace Interfaz_Proyecto_Bibliografia
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario();
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            if (dtgAlumno.Rows.Count == 0)
+            {
+                MessageBox.Show("Favor seleccione una fila!!");
+            }
+            else
+            {
+                int codigo = Convert.ToInt32(dtgAlumno.CurrentRow.Cells[0].Value);
+                using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Alumno WHERE Codigo ="+ codigo +"", con);
+                    SqlDataReader registro = cmd.ExecuteReader();
+                    if (registro.Read())
+                    {
+                        txtId.Text = registro["Codigo"].ToString();
+                        txtNroDocumento.Text = registro["Nro_Documento"].ToString();
+                        cmbTipoDocumento.SelectedItem = registro["Tipo_Documento"].ToString();
+                        txtNombre.Text = registro["Nombre"].ToString();
+                        txtApellido.Text = registro["Apellido"].ToString();
+                        dtpFechaNacimiento.Value = (DateTime)registro["Fecha_Nacimiento"];
+                        txtDireccion.Text = registro["Direccion"].ToString();
+                        txtTelefono.Text = registro["Telefono"].ToString();
+                        txtEmail.Text = registro["Email"].ToString();
+                        txtPromocion.Text = registro["Promocion"].ToString();
+                    }
+                }
+
+            }
         }
     }
 }

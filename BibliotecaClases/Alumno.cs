@@ -127,20 +127,7 @@ namespace BibliotecaClases
         }
 
 
-        public static void EliminarAlumno(Alumno alumno)
-        {
-            //listaAlumnos.Remove(alumno);
-            using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
-            {
-                con.Open();
-                string textoCmd = @"DELETE FROM Alumno WHERE Id = @Id";
-                SqlCommand cmd = new SqlCommand(textoCmd, con);
-                cmd = alumno.ObtenerParametroId(cmd);
-
-
-                cmd.ExecuteNonQuery();
-            }
-        }
+        
         public static List<Alumno> ObtenerAlumnos()
         {
 

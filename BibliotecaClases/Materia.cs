@@ -19,6 +19,7 @@ namespace BibliotecaClases
         public TipoMateria tipo_materia { get; set; }
 
         public static List<Materia> listaMateria = new List<Materia>();
+        public static List<int> listaMateriaID = new List<int>();
 
         public static void AgregarMateria(Materia m)
         {
@@ -50,6 +51,32 @@ namespace BibliotecaClases
         public static void EliminarMateria(Materia m)
         {
             listaMateria.Remove(m);
+        }
+
+
+
+
+        public static List<int> ObtenerMateriaId()
+        {
+            Materia m;
+            listaMateriaID.Clear();
+
+            using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+            {
+                con.Open();
+                string sentenciaSQL = "SELECT Codigo FROM Materia";
+                SqlCommand cmd = new SqlCommand(sentenciaSQL, con);
+                SqlDataReader elLectordeDatos = cmd.ExecuteReader();
+
+                while (elLectordeDatos.Read())
+                {
+                    Materia materia = new Materia();
+                   int codigo = materia.codigo = elLectordeDatos.GetInt32(0);
+                    listaMateriaID.Add(codigo);
+                }
+            }
+
+           return listaMateriaID;
         }
 
         public static List<Materia> ObtenerMateria()

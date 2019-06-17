@@ -63,5 +63,11 @@ namespace Interfaz_Proyecto_Bibliografia
         {
             Close();
         }
+
+        private void acercaDeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAcercaDe ad = new frmAcercaDe();
+            ad.Show();
+        }
     }
 }

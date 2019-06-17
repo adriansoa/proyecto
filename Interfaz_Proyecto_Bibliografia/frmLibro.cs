@@ -18,6 +18,7 @@ namespace Interfaz_Proyecto_Bibliografia
         public frmLibro()
         {
             InitializeComponent();
+            
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -29,7 +30,7 @@ namespace Interfaz_Proyecto_Bibliografia
             libro.editorial = txtEditorial.Text;
             libro.anho_publicacion = txtAnoPublicacion.Text;
             libro.edicion = txtEdicion.Text;
-            libro.materia = (Materia)cmbMateria.SelectedItem;
+            libro.materiaId =Convert.ToInt32(cmbMateriaID.SelectedItem);
             libro.Precio = txtPrecio.Text;
             Libro.AgregarLibro(libro);
 
@@ -62,7 +63,7 @@ namespace Interfaz_Proyecto_Bibliografia
             txtEditorial.Text = "";
             txtAnoPublicacion.Text = "";
             txtEdicion.Text = "";
-            cmbMateria.SelectedItem = null;
+            cmbMateriaID.SelectedItem = null;
             txtPrecio.Text = "";
         }
 
@@ -78,7 +79,7 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            this.Show();
+            this.Close();
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
@@ -88,9 +89,34 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void frmLibro_Load(object sender, EventArgs e)
         {
-            cmbMateria.DataSource = null;
-            cmbMateria.DataSource = Materia.ObtenerMateria();
-            cmbMateria.SelectedItem = null;
+            cmbMateriaID.DataSource = null;
+            cmbMateriaID.DataSource = Materia.ObtenerMateriaId();
+            cmbMateriaID.SelectedItem = null;
+            
+        }
+
+        private void ObtenerNombreMateria()
+        {
+            int materiaID = Convert.ToInt32(cmbMateriaID.SelectedItem);
+            if (materiaID >= 0)
+            {
+                using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+                {
+                    con.Open();
+                    string sentenciaSQL = "SELECT * FROM Materia WHERE Codigo =" +materiaID + "";
+                    SqlCommand cmd = new SqlCommand(sentenciaSQL, con);
+                    SqlDataReader elLectordeDatos = cmd.ExecuteReader();    
+                    while (elLectordeDatos.Read())
+                    {
+                        Materia materia = new Materia();
+                        string nombre = materia.Nombre = elLectordeDatos.GetString(1);
+                        txtMateria.Text = nombre;                        
+                    }
+                }
+            }
+
+
+
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -113,7 +139,7 @@ namespace Interfaz_Proyecto_Bibliografia
             libro.editorial = txtEditorial.Text;
             libro.anho_publicacion = txtAnoPublicacion.Text;
             libro.edicion = txtEdicion.Text;
-            libro.materia = (Materia)cmbMateria.SelectedItem;
+            libro.materiaId = Convert.ToInt32(cmbMateriaID.SelectedItem);
             libro.Precio = txtPrecio.Text;
             Libro.listaLibro.Add(libro);
 
@@ -133,10 +159,16 @@ namespace Interfaz_Proyecto_Bibliografia
                 txtEdicion.Text = lib.edicion;
                 txtEditorial.Text = lib.editorial;
                 txtPrecio.Text = lib.Precio;
-                cmbMateria.SelectedItem = lib.materia;
+                cmbMateriaID.SelectedItem = lib.materiaId;
                 
                 
             }
+        }
+
+        private void cmbMateriaID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtMateria.Text = "";
+            ObtenerNombreMateria();
         }
     }
 }

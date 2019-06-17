@@ -16,7 +16,7 @@ namespace BibliotecaClases
         public string editorial { get; set; }
         public string anho_publicacion { get; set; }
         public string edicion { get; set; }
-        public Materia materia { get; set; }
+        public int materiaId { get; set; }
         public string Precio { get; set; }
 
         public static List<Libro> listaLibro = new List<Libro>();
@@ -35,7 +35,7 @@ namespace BibliotecaClases
                 SqlParameter p3 = new SqlParameter("@Editorial", l.editorial);
                 SqlParameter p4 = new SqlParameter("@Anho_Publicacion", l.anho_publicacion);
                 SqlParameter p5 = new SqlParameter("@Edicion", l.edicion);
-                SqlParameter p6 = new SqlParameter("@MateriaId", l.materia.codigo);
+                SqlParameter p6 = new SqlParameter("@MateriaId", l.materiaId);
                 SqlParameter p7 = new SqlParameter("@Precio", l.Precio);
              
                 p1.SqlDbType = SqlDbType.VarChar;

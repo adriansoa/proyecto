@@ -44,20 +44,21 @@
             this.txtAnoPublicacion = new System.Windows.Forms.TextBox();
             this.txtEdicion = new System.Windows.Forms.TextBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
-            this.cmbMateria = new System.Windows.Forms.ComboBox();
+            this.cmbMateriaID = new System.Windows.Forms.ComboBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.dtgDetalleLibro = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new System.Windows.Forms.Button();
+            this.txtMateria = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleLibro)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(46, 47);
+            this.label1.Location = new System.Drawing.Point(39, 54);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
@@ -67,7 +68,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 96);
+            this.label2.Location = new System.Drawing.Point(39, 104);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 13);
@@ -77,7 +78,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 150);
+            this.label3.Location = new System.Drawing.Point(39, 152);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
@@ -87,7 +88,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(46, 204);
+            this.label4.Location = new System.Drawing.Point(39, 205);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 13);
@@ -97,7 +98,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(46, 254);
+            this.label5.Location = new System.Drawing.Point(39, 261);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 13);
@@ -107,7 +108,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(316, 47);
+            this.label6.Location = new System.Drawing.Point(316, 51);
             this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(42, 13);
@@ -176,7 +177,7 @@
             // 
             // txtEdicion
             // 
-            this.txtEdicion.Location = new System.Drawing.Point(381, 54);
+            this.txtEdicion.Location = new System.Drawing.Point(381, 44);
             this.txtEdicion.Margin = new System.Windows.Forms.Padding(2);
             this.txtEdicion.Name = "txtEdicion";
             this.txtEdicion.Size = new System.Drawing.Size(101, 20);
@@ -190,21 +191,22 @@
             this.txtPrecio.Size = new System.Drawing.Size(101, 20);
             this.txtPrecio.TabIndex = 7;
             // 
-            // cmbMateria
+            // cmbMateriaID
             // 
-            this.cmbMateria.FormattingEnabled = true;
-            this.cmbMateria.Location = new System.Drawing.Point(381, 96);
-            this.cmbMateria.Margin = new System.Windows.Forms.Padding(2);
-            this.cmbMateria.Name = "cmbMateria";
-            this.cmbMateria.Size = new System.Drawing.Size(101, 21);
-            this.cmbMateria.TabIndex = 6;
+            this.cmbMateriaID.FormattingEnabled = true;
+            this.cmbMateriaID.Location = new System.Drawing.Point(381, 96);
+            this.cmbMateriaID.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbMateriaID.Name = "cmbMateriaID";
+            this.cmbMateriaID.Size = new System.Drawing.Size(30, 21);
+            this.cmbMateriaID.TabIndex = 6;
+            this.cmbMateriaID.SelectedIndexChanged += new System.EventHandler(this.cmbMateriaID_SelectedIndexChanged);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(603, 60);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(56, 19);
+            this.btnAgregar.Size = new System.Drawing.Size(56, 25);
             this.btnAgregar.TabIndex = 17;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -212,10 +214,10 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(603, 125);
+            this.btnEliminar.Location = new System.Drawing.Point(603, 132);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(56, 19);
+            this.btnEliminar.Size = new System.Drawing.Size(56, 26);
             this.btnEliminar.TabIndex = 18;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -237,7 +239,7 @@
             this.btnCerrar.Location = new System.Drawing.Point(603, 266);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(56, 19);
+            this.btnCerrar.Size = new System.Drawing.Size(56, 25);
             this.btnCerrar.TabIndex = 20;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -264,6 +266,14 @@
             this.btnConsultar.UseVisualStyleBackColor = true;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
+            // txtMateria
+            // 
+            this.txtMateria.Location = new System.Drawing.Point(423, 97);
+            this.txtMateria.Margin = new System.Windows.Forms.Padding(2);
+            this.txtMateria.Name = "txtMateria";
+            this.txtMateria.Size = new System.Drawing.Size(101, 20);
+            this.txtMateria.TabIndex = 24;
+            // 
             // frmLibro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,13 +281,14 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(715, 535);
+            this.Controls.Add(this.txtMateria);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.dtgDetalleLibro);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.cmbMateria);
+            this.Controls.Add(this.cmbMateriaID);
             this.Controls.Add(this.txtPrecio);
             this.Controls.Add(this.txtEdicion);
             this.Controls.Add(this.txtAnoPublicacion);
@@ -320,12 +331,13 @@
         private System.Windows.Forms.TextBox txtAnoPublicacion;
         private System.Windows.Forms.TextBox txtEdicion;
         private System.Windows.Forms.TextBox txtPrecio;
-        private System.Windows.Forms.ComboBox cmbMateria;
+        private System.Windows.Forms.ComboBox cmbMateriaID;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.DataGridView dtgDetalleLibro;
         private System.Windows.Forms.Button btnConsultar;
+        private System.Windows.Forms.TextBox txtMateria;
     }
 }
