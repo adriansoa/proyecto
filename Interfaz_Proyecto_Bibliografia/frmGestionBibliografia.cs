@@ -24,15 +24,6 @@ namespace Interfaz_Proyecto_Bibliografia
             cmbMateria.SelectedItem = null;
         }
 
-        private void ActualizarDataGrid()
-        {
-           // if (cmbMateria.s)
-          //  {
-                dtgBibliografiaDetalle.DataSource = null;
-                dtgBibliografiaDetalle.DataSource = Libro.ObtenerLibro();
-          //  }
-        }
-
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             if (cmbMateria.SelectedItem != null){
@@ -50,8 +41,6 @@ namespace Interfaz_Proyecto_Bibliografia
                     dtgBibliografiaDetalle.DataSource = tabla;
 
                 }
-
-
             }
             else
             {
@@ -68,6 +57,36 @@ namespace Interfaz_Proyecto_Bibliografia
         {
             frmLibro lib = new frmLibro();
             lib.Show();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dtgBibliografiaDetalle.Rows.Count == 0)
+            {
+                MessageBox.Show("Favor seleccione por completo una fila!!");
+            }
+            else
+            {
+                int codigo = Convert.ToInt32(dtgBibliografiaDetalle.CurrentRow.Cells[0].Value);
+                using (SqlConnection con= new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+                {
+                    con.Open();
+                    string sentenciasql = "DELETE  FROM Libro WHERE Libro.Id=" + codigo +"";
+                    SqlCommand cmd = new SqlCommand(sentenciasql, con);
+                    int resultado = cmd.ExecuteNonQuery();
+
+                    if (resultado != -1)
+                    {
+                        MessageBox.Show("Registro eliminado exitosamente!!" + resultado);
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo eliminar el registro!!");
+                    }
+                }
+
+            }
+
         }
     }
 }

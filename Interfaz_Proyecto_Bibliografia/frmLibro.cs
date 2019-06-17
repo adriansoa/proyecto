@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -30,16 +31,27 @@ namespace Interfaz_Proyecto_Bibliografia
             libro.edicion = txtEdicion.Text;
             libro.materia = (Materia)cmbMateria.SelectedItem;
             libro.Precio = txtPrecio.Text;
-            Libro.listaLibro.Add(libro);
+            Libro.AgregarLibro(libro);
 
+
+            MessageBox.Show("El libro ha sido registrado con éxito");
             ActualizarDataGrib();
             Limpiar();
         }
 
         private void ActualizarDataGrib()
         {
-            dtgDetalleLibro.DataSource = null;
-            dtgDetalleLibro.DataSource = Libro.listaLibro;
+            using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand("SELECT * FROM Libro", con);
+                SqlDataAdapter adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                dtgDetalleLibro.DataSource = tabla;
+
+            }
         }
 
         private void Limpiar()

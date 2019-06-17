@@ -86,6 +86,7 @@ namespace Interfaz_Proyecto_Bibliografia
             using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
             {
                 con.Open();
+
                 SqlCommand cmd = new SqlCommand("UPDATE Facultad SET Nombre='" + this.txtNombre.Text + "',Anho_Fundacion='" + this.txtAñoInicio.Text + "' WHERE Id=" + Convert.ToInt32(this.txtCodigo.Text + ""), con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Actualizado el registro");
@@ -128,7 +129,7 @@ namespace Interfaz_Proyecto_Bibliografia
 
                 if (txtCodigo.Text == "")
                 {
-                    MessageBox.Show("Favor complete el campo CODIGO con el codigo del registro que desea actualizar!");
+                    MessageBox.Show("Favor complete el campo CODIGO con el codigo del registro que desea buscar!");
                 }
                 else
                 {
