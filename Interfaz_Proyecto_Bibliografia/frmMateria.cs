@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -31,11 +30,12 @@ namespace Interfaz_Proyecto_Bibliografia
             mat.cant_creditos = Convert.ToInt32(txtCantidadCreditos.Text);
             if (rdbObligatoria.Checked)
             {
-                mat.tipo_materia = TipoMateria.Obligatoria;
+                mat.tipo_cant_creditosmateria = TipoMateria.Obligatoria;
 
-            } else if (rdbElectiva.Checked)
+            }
+            else if (rdbElectiva.Checked)
             {
-                mat.tipo_materia = TipoMateria.Electiva;
+                mat.tipo_cant_creditosmateria = TipoMateria.Electiva;
             }
 
             Materia.AgregarMateria(mat);
@@ -58,17 +58,8 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void ActualizarDataGridMateria()
         {
-            using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
-            {
-                con.Open();
-                SqlCommand comando = new SqlCommand("SELECT * FROM Materia", con);
-                SqlDataAdapter adaptador = new SqlDataAdapter();
-                adaptador.SelectCommand = comando;
-                DataTable tabla = new DataTable();
-                adaptador.Fill(tabla);
-                dtgMaterias.DataSource = tabla;
-
-            }
+            dtgMaterias.DataSource = null;
+            dtgMaterias.DataSource = Materia.listaMateria;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -101,12 +92,12 @@ namespace Interfaz_Proyecto_Bibliografia
             mat.cant_creditos = Convert.ToInt32(txtCantidadCreditos.Text);
             if (rdbObligatoria.Checked)
             {
-                mat.tipo_materia = TipoMateria.Obligatoria;
+                mat.tipo_cant_creditosmateria = TipoMateria.Obligatoria;
 
             }
             else if (rdbElectiva.Checked)
             {
-                mat.tipo_materia = TipoMateria.Electiva;
+                mat.tipo_cant_creditosmateria = TipoMateria.Electiva;
             }
 
             return mat;
@@ -121,10 +112,11 @@ namespace Interfaz_Proyecto_Bibliografia
                 txtCodigo.Text = Convert.ToString(mat.codigo);
                 txtNombre.Text = mat.Nombre;
                 txtCantidadCreditos.Text = Convert.ToString(mat.cant_creditos);
-                if (mat.tipo_materia == TipoMateria.Obligatoria)
+                if (mat.tipo_cant_creditosmateria == TipoMateria.Obligatoria)
                 {
                     rdbObligatoria.Checked = true;
-                }else if (mat.tipo_materia == TipoMateria.Electiva)
+                }
+                else if (mat.tipo_cant_creditosmateria == TipoMateria.Electiva)
                 {
                     rdbElectiva.Checked = true;
                 }
