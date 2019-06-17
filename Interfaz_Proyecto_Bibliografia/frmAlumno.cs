@@ -107,21 +107,21 @@ namespace Interfaz_Proyecto_Bibliografia
         {
             /* int index = dtgAlumno.CurrentRow.Index;
 
-            if (index >= 0)
-            {
-                Alumno.listadoAlumnos[index] = ObtenerAlumnoFormulario();
-                ActualizarDataGrid();
-            }*/
+           if (index >= 0)
+           {
+               Alumno.listadoAlumnos[index] = ObtenerAlumnoFormulario();
+               ActualizarDataGrid();
+           }*/
 
             using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Alumno SET Nro_Documento='" + this.txtNroDocumento.Text +
+                SqlCommand cmd = new SqlCommand("UPDATE Alumno SET Nro_Documento ='" + this.txtNroDocumento.Text +
                  "',Tipo_Documento='" + this.cmbTipoDocumento.Text +
                 "',Nombre='" + this.txtNombre.Text + "',Apellido='" + this.txtApellido.Text +
                 "',Fecha_Nacimiento='" + this.dtpFechaNacimiento.Text + "',Direccion='" + this.txtDireccion.Text +
                 "',Telefono='" + this.txtTelefono.Text + "',Email='" + this.txtEmail.Text + "',Promocion='" + this.txtPromocion.Text
-                + "' WHERE Id=" + Convert.ToInt32(this.txtNroDocumento.Text + ""), con);
+                + "' WHERE Id= " + Convert.ToInt32(this.txtId.Text + ""), con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Actualizado el registro");
                 ActualizarDataGrid();
