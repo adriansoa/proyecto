@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMateria));
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -48,9 +49,10 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(600, 216);
+            this.btnLimpiar.Location = new System.Drawing.Point(800, 266);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.Size = new System.Drawing.Size(100, 28);
             this.btnLimpiar.TabIndex = 27;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -58,9 +60,10 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Location = new System.Drawing.Point(600, 163);
+            this.btnModificar.Location = new System.Drawing.Point(800, 201);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(75, 23);
+            this.btnModificar.Size = new System.Drawing.Size(100, 28);
             this.btnModificar.TabIndex = 26;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
@@ -68,9 +71,10 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(600, 104);
+            this.btnEliminar.Location = new System.Drawing.Point(800, 128);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.Size = new System.Drawing.Size(100, 28);
             this.btnEliminar.TabIndex = 25;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -78,9 +82,10 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(600, 50);
+            this.btnAgregar.Location = new System.Drawing.Point(800, 62);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(100, 28);
             this.btnAgregar.TabIndex = 24;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -89,66 +94,74 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(29, 50);
+            this.lblCodigo.Location = new System.Drawing.Point(39, 62);
+            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(40, 13);
+            this.lblCodigo.Size = new System.Drawing.Size(52, 17);
             this.lblCodigo.TabIndex = 28;
             this.lblCodigo.Text = "Codigo";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(29, 93);
+            this.lblNombre.Location = new System.Drawing.Point(39, 114);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(44, 13);
+            this.lblNombre.Size = new System.Drawing.Size(58, 17);
             this.lblNombre.TabIndex = 29;
             this.lblNombre.Text = "Nombre";
             // 
             // lblCantidadCreditos
             // 
             this.lblCantidadCreditos.AutoSize = true;
-            this.lblCantidadCreditos.Location = new System.Drawing.Point(29, 133);
+            this.lblCantidadCreditos.Location = new System.Drawing.Point(39, 164);
+            this.lblCantidadCreditos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCantidadCreditos.Name = "lblCantidadCreditos";
-            this.lblCantidadCreditos.Size = new System.Drawing.Size(105, 13);
+            this.lblCantidadCreditos.Size = new System.Drawing.Size(140, 17);
             this.lblCantidadCreditos.TabIndex = 30;
             this.lblCantidadCreditos.Text = "Cantidad de Creditos";
             // 
             // lblTipoMateria
             // 
             this.lblTipoMateria.AutoSize = true;
-            this.lblTipoMateria.Location = new System.Drawing.Point(29, 173);
+            this.lblTipoMateria.Location = new System.Drawing.Point(39, 213);
+            this.lblTipoMateria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTipoMateria.Name = "lblTipoMateria";
-            this.lblTipoMateria.Size = new System.Drawing.Size(66, 13);
+            this.lblTipoMateria.Size = new System.Drawing.Size(87, 17);
             this.lblTipoMateria.TabIndex = 31;
             this.lblTipoMateria.Text = "Tipo Materia";
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(154, 42);
+            this.txtCodigo.Location = new System.Drawing.Point(205, 52);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigo.Size = new System.Drawing.Size(132, 22);
             this.txtCodigo.TabIndex = 0;
             // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(154, 86);
+            this.txtNombre.Location = new System.Drawing.Point(205, 106);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 20);
+            this.txtNombre.Size = new System.Drawing.Size(132, 22);
             this.txtNombre.TabIndex = 1;
             // 
             // txtCantidadCreditos
             // 
-            this.txtCantidadCreditos.Location = new System.Drawing.Point(154, 126);
+            this.txtCantidadCreditos.Location = new System.Drawing.Point(205, 155);
+            this.txtCantidadCreditos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCantidadCreditos.Name = "txtCantidadCreditos";
-            this.txtCantidadCreditos.Size = new System.Drawing.Size(100, 20);
+            this.txtCantidadCreditos.Size = new System.Drawing.Size(132, 22);
             this.txtCantidadCreditos.TabIndex = 2;
             // 
             // rdbObligatoria
             // 
             this.rdbObligatoria.AutoSize = true;
-            this.rdbObligatoria.Location = new System.Drawing.Point(145, 169);
+            this.rdbObligatoria.Location = new System.Drawing.Point(193, 208);
+            this.rdbObligatoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdbObligatoria.Name = "rdbObligatoria";
-            this.rdbObligatoria.Size = new System.Drawing.Size(75, 17);
+            this.rdbObligatoria.Size = new System.Drawing.Size(98, 21);
             this.rdbObligatoria.TabIndex = 3;
             this.rdbObligatoria.TabStop = true;
             this.rdbObligatoria.Text = "Obligatoria";
@@ -157,9 +170,10 @@
             // rdbElectiva
             // 
             this.rdbElectiva.AutoSize = true;
-            this.rdbElectiva.Location = new System.Drawing.Point(247, 169);
+            this.rdbElectiva.Location = new System.Drawing.Point(329, 208);
+            this.rdbElectiva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.rdbElectiva.Name = "rdbElectiva";
-            this.rdbElectiva.Size = new System.Drawing.Size(63, 17);
+            this.rdbElectiva.Size = new System.Drawing.Size(78, 21);
             this.rdbElectiva.TabIndex = 36;
             this.rdbElectiva.TabStop = true;
             this.rdbElectiva.Text = "Electiva";
@@ -168,17 +182,19 @@
             // dtgMaterias
             // 
             this.dtgMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgMaterias.Location = new System.Drawing.Point(32, 271);
+            this.dtgMaterias.Location = new System.Drawing.Point(43, 334);
+            this.dtgMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgMaterias.Name = "dtgMaterias";
-            this.dtgMaterias.Size = new System.Drawing.Size(592, 150);
+            this.dtgMaterias.Size = new System.Drawing.Size(789, 185);
             this.dtgMaterias.TabIndex = 37;
             this.dtgMaterias.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgMaterias_CellContentClick);
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(247, 225);
+            this.btnConsultar.Location = new System.Drawing.Point(329, 277);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
+            this.btnConsultar.Size = new System.Drawing.Size(100, 28);
             this.btnConsultar.TabIndex = 38;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -186,9 +202,9 @@
             // 
             // frmMateria
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.dtgMaterias);
             this.Controls.Add(this.rdbElectiva);
@@ -204,6 +220,8 @@
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmMateria";
             this.Text = "Formulario de Materias";
             this.Load += new System.EventHandler(this.frmMateria_Load);

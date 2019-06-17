@@ -48,5 +48,19 @@ namespace Interfaz_Proyecto_Bibliografia
         {
 
         }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                Usuario.CrearUsuario(txtUsuario.Text, txtPassword.Text);
+                MessageBox.Show("Usuario creado exitosamente");
+
+                frmLogin frm = new frmLogin();
+                frm.Show();
+
+                this.Hide();
+            }
+        }
     }
 }

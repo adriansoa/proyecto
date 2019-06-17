@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAcceder = new System.Windows.Forms.Button();
             this.lblContraseña = new System.Windows.Forms.Label();
@@ -38,10 +39,10 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(237, 169);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelar.Location = new System.Drawing.Point(316, 208);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(88, 24);
+            this.btnCancelar.Size = new System.Drawing.Size(117, 30);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -49,10 +50,10 @@
             // 
             // btnAcceder
             // 
-            this.btnAcceder.Location = new System.Drawing.Point(127, 169);
-            this.btnAcceder.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAcceder.Location = new System.Drawing.Point(169, 208);
+            this.btnAcceder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAcceder.Name = "btnAcceder";
-            this.btnAcceder.Size = new System.Drawing.Size(88, 24);
+            this.btnAcceder.Size = new System.Drawing.Size(117, 30);
             this.btnAcceder.TabIndex = 10;
             this.btnAcceder.Text = "Acceder";
             this.btnAcceder.UseVisualStyleBackColor = true;
@@ -61,53 +62,54 @@
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(124, 116);
-            this.lblContraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblContraseña.Location = new System.Drawing.Point(165, 143);
             this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(61, 13);
+            this.lblContraseña.Size = new System.Drawing.Size(81, 17);
             this.lblContraseña.TabIndex = 9;
             this.lblContraseña.Text = "Contraseña";
             // 
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(124, 55);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUsuario.Location = new System.Drawing.Point(165, 68);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(43, 13);
+            this.lblUsuario.Size = new System.Drawing.Size(57, 17);
             this.lblUsuario.TabIndex = 8;
             this.lblUsuario.Text = "Usuario";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(237, 112);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
+            this.txtPassword.Location = new System.Drawing.Point(316, 138);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(90, 20);
+            this.txtPassword.Size = new System.Drawing.Size(119, 22);
             this.txtPassword.TabIndex = 7;
+            this.txtPassword.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPassword_KeyPress);
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(237, 52);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUsuario.Location = new System.Drawing.Point(316, 64);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(90, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(119, 22);
             this.txtUsuario.TabIndex = 6;
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(503, 275);
+            this.ClientSize = new System.Drawing.Size(671, 338);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAcceder);
             this.Controls.Add(this.lblContraseña);
             this.Controls.Add(this.lblUsuario);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsuario);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLogin";
-            this.Text = "Formulario Login";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 

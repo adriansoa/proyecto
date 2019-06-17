@@ -50,6 +50,37 @@ namespace Interfaz_Proyecto_Bibliografia
         {
             this.Close();
         }
+
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                if (txtUsuario.Text.Trim().Equals(string.Empty))
+                {
+                    MessageBox.Show("Favor Ingresa el Usuario");
+                    return;
+                }
+
+                if (txtPassword.Text.Trim().Equals(string.Empty))
+                {
+                    MessageBox.Show("Favor Ingresa la clave");
+                    return;
+                }
+
+                if (Usuario.Autenticar(txtUsuario.Text, txtPassword.Text))
+                {
+                    this.Hide();
+                    MessageBox.Show("Bienvenido " + txtUsuario.Text);
+                    frmMenuPrincipal elmenuPrincipal = new frmMenuPrincipal();
+                    elmenuPrincipal.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos");
+                }
+            }
+        }
     }
 }
 
