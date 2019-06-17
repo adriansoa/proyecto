@@ -54,6 +54,25 @@ namespace BibliotecaClases
 
         public static List<Materia> ObtenerMateria()
         {
+            Materia materia;
+            listaMateria.Clear();
+
+            using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+            {
+                con.Open();
+                string textoCmd = "SELECT Nombre FROM Materia";
+
+                SqlCommand cmd = new SqlCommand(textoCmd, con);
+
+                SqlDataReader elLectorDeDatos = cmd.ExecuteReader();
+
+                while (elLectorDeDatos.Read())
+                {
+                    materia = new Materia();
+                    materia.Nombre = elLectorDeDatos.GetString(0);
+                    listaMateria.Add(materia);
+                }
+            }
             return listaMateria;
         }
 

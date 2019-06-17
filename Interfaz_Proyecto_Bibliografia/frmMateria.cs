@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -57,8 +58,17 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void ActualizarDataGridMateria()
         {
-            dtgMaterias.DataSource = null;
-            dtgMaterias.DataSource = Materia.listaMateria;
+            using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+            {
+                con.Open();
+                SqlCommand comando = new SqlCommand("SELECT * FROM Materia", con);
+                SqlDataAdapter adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                dtgMaterias.DataSource = tabla;
+
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
