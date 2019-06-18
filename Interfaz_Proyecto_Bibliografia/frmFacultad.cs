@@ -21,7 +21,7 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void frmFacultad_Load(object sender, EventArgs e)
         {
-            //ActualizarDataGrib();
+           
         }
 
         private void ActualizarDataGrib()
@@ -49,6 +49,7 @@ namespace Interfaz_Proyecto_Bibliografia
 
             MessageBox.Show("La Facultad ha sido agregada con exito");
             LimpiarFormulario();
+            ActualizarDataGrib();
         }
 
         private void LimpiarFormulario()
@@ -96,16 +97,6 @@ namespace Interfaz_Proyecto_Bibliografia
 
 
         }
-
-        private Facultad ObtenerFacultadFormulario()
-        {
-            Facultad facultad = new Facultad();
-            facultad.nombre = txtNombre.Text;
-            facultad.anho_fundacion = txtAñoInicio.Text;
-
-            return facultad;
-        }
-
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
