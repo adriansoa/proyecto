@@ -12,8 +12,11 @@ using BibliotecaClases;
 
 namespace Interfaz_Proyecto_Bibliografia
 {
+   
     public partial class frmMateria : Form
     {
+        public string tipomateriaelegida;
+
         public frmMateria()
         {
             InitializeComponent();
@@ -100,14 +103,75 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            
+            if (dtgMaterias.Rows.Count == 0)
+            {
+                MessageBox.Show("Favor seleccione una fila de la grilla!!");
+            }
+            else
+            {
+                int codigo = Convert.ToInt32(dtgMaterias.CurrentRow.Cells[0].Value);
+                using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+                {
+                    con.Open();
+
+                    string tipo_materia = ObtenerRadioButon();
+
+                    SqlCommand cmd = new SqlCommand("UPDATE Materia SET Nombre ='" + this.txtNombre.Text +
+                     "',Cantidad_Creditos='" + this.txtCantidadCreditos.Text +
+                    "',Tipo_Materia='" + tipo_materia +
+                    "' WHERE Codigo= " + codigo + "", con);
+                    
+                    int resultado = cmd.ExecuteNonQuery();
+
+                    if (resultado != -1)
+                    {
+                        MessageBox.Show("Registro actualizado exitosamente!!" + resultado);
+                        ActualizarDataGridMateria();
+                        LimpiarFormulario();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo actualizar el registro!!");
+                    }
+                }
+
+            }
         }
 
-        
+        private string ObtenerRadioButon()
+        {
+            
+            if (rdbObligatoria.Checked)
+            {
+                tipomateriaelegida = TipoMateria.Obligatoria.ToString();
+
+            }
+            else if (rdbElectiva.Checked)
+            {
+                tipomateriaelegida = TipoMateria.Electiva.ToString();
+            }
+            return tipomateriaelegida;
+        }
 
         private void dtgMaterias_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            int codigo = Convert.ToInt32(dtgMaterias.CurrentRow.Cells[0].Value);
+
+            if (codigo > 0)
+            {
+                using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Materia WHERE Codigo =" + codigo + "", con);
+                    SqlDataReader registro = cmd.ExecuteReader();
+                    if (registro.Read())
+                    {
+                        txtCodigo.Text = registro["Codigo"].ToString();
+                        txtNombre.Text = registro["Nombre"].ToString();
+                        txtCantidadCreditos.Text = registro["Cantidad_Creditos"].ToString();
+                    }
+                }
+            }
         }
 
         private void frmMateria_Load(object sender, EventArgs e)
