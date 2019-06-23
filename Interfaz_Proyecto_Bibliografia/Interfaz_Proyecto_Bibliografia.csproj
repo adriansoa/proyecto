@@ -76,6 +76,12 @@
     <Compile Include="frmGestionBibliografia.Designer.cs">
       <DependentUpon>frmGestionBibliografia.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInformeVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInformeVenta.Designer.cs">
+      <DependentUpon>frmInformeVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLibro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionBibliografia.resx">
       <DependentUpon>frmGestionBibliografia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInformeVenta.resx">
+      <DependentUpon>frmInformeVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLibro.resx">
       <DependentUpon>frmLibro.cs</DependentUpon>
