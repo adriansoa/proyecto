@@ -8,9 +8,7 @@ namespace BibliotecaClases
 {
     public class DetalleFacturaVenta
     {
-        public int CodigoLibro { get; set; }
-        public string Descripcion { get; set; }
+        public Libro Libro { get; set; }
         public int Cantidad { get; set; }
-        public int PrecioUnitario { get; set; }
     }
 }

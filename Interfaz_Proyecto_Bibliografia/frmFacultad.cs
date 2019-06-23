@@ -76,8 +76,6 @@ namespace Interfaz_Proyecto_Bibliografia
                     MessageBox.Show("El registro fue eliminado");
                     ActualizarDataGrib();
                 }
-                
-
             }
         }
 
@@ -94,8 +92,6 @@ namespace Interfaz_Proyecto_Bibliografia
                 ActualizarDataGrib();
 
             }
-
-
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -106,8 +102,6 @@ namespace Interfaz_Proyecto_Bibliografia
         private void btnConsultar_Click(object sender, EventArgs e)
         {
             ActualizarDataGrib();
-            
-
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -134,8 +128,6 @@ namespace Interfaz_Proyecto_Bibliografia
 
                 }
             }
-
-        
         }
     }
 }
