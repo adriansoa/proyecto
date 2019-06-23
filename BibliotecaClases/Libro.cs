@@ -60,11 +60,6 @@ namespace BibliotecaClases
 
         }
 
-        public static void EliminarLibro(Libro l)
-        {
-            listaLibro.Remove(l);
-        }
-
         public static List<Libro> ObtenerLibro()
         {
             return listaLibro;

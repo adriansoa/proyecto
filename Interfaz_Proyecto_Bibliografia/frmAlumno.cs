@@ -72,7 +72,7 @@ namespace Interfaz_Proyecto_Bibliografia
             txtNroDocumento.Text = "";
             txtPromocion.Text = "";
             txtTelefono.Text = "";
-            cmbTipoDocumento.SelectedItem = null;
+            cmbTipoDocumento.Text = "";
             dtpFechaNacimiento.Value = System.DateTime.Now;
         }
 
@@ -109,7 +109,7 @@ namespace Interfaz_Proyecto_Bibliografia
         {
             if (dtgAlumno.Rows.Count == 0)
             {
-                MessageBox.Show("Favor seleccione una fila!!");
+                MessageBox.Show("Favor seleccione una fila de la grilla!!");
             }
             else
             {
@@ -138,59 +138,7 @@ namespace Interfaz_Proyecto_Bibliografia
                 }
 
             }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            /* 
-            using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
-            {
-                con.Open();
-
-                SqlCommand cmd = new SqlCommand("UPDATE Alumno SET Nro_Documento ='" + this.txtNroDocumento.Text +
-                 "',Tipo_Documento='" + this.cmbTipoDocumento.Text +
-                "',Nombre='" + this.txtNombre.Text + "',Apellido='" + this.txtApellido.Text +
-                "',Fecha_Nacimiento='" + this.dtpFechaNacimiento.Text + "',Direccion='" + this.txtDireccion.Text +
-                "',Telefono='" + this.txtTelefono.Text + "',Email='" + this.txtEmail.Text + "',Promocion='" + this.txtPromocion.Text
-                + "' WHERE Codigo= " + Convert.ToInt32(this.txtId.Text + ""), con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Actualizado el registro");
-                ActualizarDataGrid();
-
-            }*/
         }
-
-
-        private Alumno ObtenerAlumnoFormulario()
-        {
-            Alumno al = new Alumno();
-            al.nro_documento = txtNroDocumento.Text;
-            al.tipo_documento = (Persona.TipoDocumento)cmbTipoDocumento.SelectedItem;
-            al.nombre = txtNombre.Text;
-            al.apellido = txtApellido.Text;
-            al.fecha_Nacimiento = dtpFechaNacimiento.Value.Date;
-            al.direccion = txtDireccion.Text;
-            al.telefono = txtTelefono.Text;
-            al.email = txtEmail.Text;
-            al.Promocion = Convert.ToInt32(txtPromocion.Text);
-
-            return al;
-        }
-
-
 
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -201,7 +149,7 @@ namespace Interfaz_Proyecto_Bibliografia
         {
             if (dtgAlumno.Rows.Count == 0)
             {
-                MessageBox.Show("Favor seleccione una fila!!");
+                MessageBox.Show("Favor consulte primero antes de seleccionar!!");
             }
             else
             {
@@ -215,7 +163,7 @@ namespace Interfaz_Proyecto_Bibliografia
                     {
                         txtId.Text = registro["Codigo"].ToString();
                         txtNroDocumento.Text = registro["Nro_Documento"].ToString();
-                        cmbTipoDocumento.SelectedItem = registro["Tipo_Documento"].ToString();
+                        cmbTipoDocumento.SelectedText = registro["Tipo_Documento"].ToString();
                         txtNombre.Text = registro["Nombre"].ToString();
                         txtApellido.Text = registro["Apellido"].ToString();
                         dtpFechaNacimiento.Value = (DateTime)registro["Fecha_Nacimiento"];

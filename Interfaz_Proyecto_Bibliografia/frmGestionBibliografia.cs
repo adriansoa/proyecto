@@ -28,19 +28,7 @@ namespace Interfaz_Proyecto_Bibliografia
         {
             if (cmbMateria.SelectedItem != null){
 
-                using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
-                {
-
-                    string Materia = cmbMateria.SelectedItem.ToString();
-                    con.Open();
-                    SqlCommand comando = new SqlCommand("SELECT * FROM Libro JOIN Materia M ON Libro.MateriaId = M.Codigo WHERE M.Nombre LIKE '%" + Materia + "%'", con);
-                    SqlDataAdapter adaptador = new SqlDataAdapter();
-                    adaptador.SelectCommand = comando;
-                    DataTable tabla = new DataTable();
-                    adaptador.Fill(tabla);
-                    dtgBibliografiaDetalle.DataSource = tabla;
-
-                }
+                ActualizarGrilla();
             }
             else
             {
@@ -57,6 +45,24 @@ namespace Interfaz_Proyecto_Bibliografia
         {
             frmLibro lib = new frmLibro();
             lib.Show();
+        }
+
+
+        private void ActualizarGrilla()
+        {
+            using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+            {
+
+                string Materia = cmbMateria.SelectedItem.ToString();
+                con.Open();
+                SqlCommand comando = new SqlCommand("SELECT * FROM Libro JOIN Materia M ON Libro.MateriaId = M.Codigo WHERE M.Nombre LIKE '%" + Materia + "%'", con);
+                SqlDataAdapter adaptador = new SqlDataAdapter();
+                adaptador.SelectCommand = comando;
+                DataTable tabla = new DataTable();
+                adaptador.Fill(tabla);
+                dtgBibliografiaDetalle.DataSource = tabla;
+
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -78,6 +84,7 @@ namespace Interfaz_Proyecto_Bibliografia
                     if (resultado != -1)
                     {
                         MessageBox.Show("Registro eliminado exitosamente!!" + resultado);
+                        ActualizarGrilla();
                     }
                     else
                     {

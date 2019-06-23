@@ -37,7 +37,7 @@ namespace Interfaz_Proyecto_Bibliografia
 
             MessageBox.Show("El libro ha sido registrado con éxito");
             ActualizarDataGrib();
-            Limpiar();
+            LimpiarFormulario();
         }
 
         private void ActualizarDataGrib()
@@ -55,7 +55,7 @@ namespace Interfaz_Proyecto_Bibliografia
             }
         }
 
-        private void Limpiar()
+        private void LimpiarFormulario()
         {
             txtCodigo.Text = "";
             txtTitulo.Text = "";
@@ -69,12 +69,33 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            Libro libro = (Libro)dtgDetalleLibro.CurrentRow.DataBoundItem;
-            if(libro != null)
+            if (dtgDetalleLibro.Rows.Count == 0)
             {
-                Libro.listaLibro.Remove(libro);
+                MessageBox.Show("Favor seleccione por completo una fila!!");
             }
-            ActualizarDataGrib();
+            else
+            {
+                int codigo = Convert.ToInt32(dtgDetalleLibro.CurrentRow.Cells[0].Value);
+                using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+                {
+                    con.Open();
+                    string sentenciasql = "DELETE  FROM Libro WHERE Libro.Id=" + codigo + "";
+                    SqlCommand cmd = new SqlCommand(sentenciasql, con);
+                    int resultado = cmd.ExecuteNonQuery();
+
+                    if (resultado != -1)
+                    {
+                        MessageBox.Show("Registro eliminado exitosamente!!" + resultado);
+                        ActualizarDataGrib();
+                        LimpiarFormulario();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo eliminar el registro!!");
+                    }
+                }
+
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -92,7 +113,7 @@ namespace Interfaz_Proyecto_Bibliografia
             cmbMateriaID.DataSource = null;
             cmbMateriaID.DataSource = Materia.ObtenerMateriaId();
             cmbMateriaID.SelectedItem = null;
-            
+            txtCodigo.Enabled = false;
         }
 
         private void ObtenerNombreMateria()
@@ -121,13 +142,38 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            int index = dtgDetalleLibro.CurrentRow.Index;
-
-            if (index >= 0)
+            if (dtgDetalleLibro.Rows.Count == 0)
             {
-                Libro.listaLibro[index] = ObtenerLibroFormulario();
-                ActualizarDataGrib();
+                MessageBox.Show("Favor seleccione una fila de la grilla!!");
             }
+            else
+            {
+                int codigo = Convert.ToInt32(dtgDetalleLibro.CurrentRow.Cells[0].Value);
+                using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+                {
+                    con.Open();
+
+                    SqlCommand cmd = new SqlCommand("UPDATE Libro SET Titulo ='" + this.txtTitulo.Text +
+                     "',Autor='" + this.txtAutor.Text +
+                    "',Editorial='" + this.txtEditorial.Text + "',Anho_Publicacion='" + this.txtAnoPublicacion.Text
+                    +"',Edicion='" + this.txtEdicion.Text + "',MateriaId='" + this.cmbMateriaID.SelectedItem +
+                    "',Precio='" + this.txtPrecio.Text + "' WHERE Id= " + codigo + "", con);
+                    int resultado = cmd.ExecuteNonQuery();
+               
+                    if (resultado != -1)
+                    {
+                        MessageBox.Show("Registro actualizado exitosamente!!" + resultado);
+                        ActualizarDataGrib();
+                        LimpiarFormulario();
+                    }
+                    else
+                    {
+                        MessageBox.Show("No se pudo actualizar el registro!!");
+                    }
+                }
+
+            }
+
         }
 
         private Libro ObtenerLibroFormulario()
@@ -148,27 +194,73 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void dtgDetalleLibro_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            Libro lib = (Libro)dtgDetalleLibro.CurrentRow.DataBoundItem;
+            int codigo = Convert.ToInt32(dtgDetalleLibro.CurrentRow.Cells[0].Value);
 
-            if (lib != null)
+        if (codigo > 0)
             {
-                txtCodigo.Text = Convert.ToString(lib.codigo);
-                txtTitulo.Text = lib.titulo;
-                txtAnoPublicacion.Text = lib.anho_publicacion;
-                txtAutor.Text = lib.autor;
-                txtEdicion.Text = lib.edicion;
-                txtEditorial.Text = lib.editorial;
-                txtPrecio.Text = lib.Precio;
-                cmbMateriaID.SelectedItem = lib.materiaId;
-                
-                
+                using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Libro WHERE Id =" + codigo + "", con);
+                    SqlDataReader registro = cmd.ExecuteReader();
+                    if (registro.Read())
+                    {
+                        txtCodigo.Text = registro["Id"].ToString();
+                        txtTitulo.Text = registro["Titulo"].ToString();
+                        txtAutor.Text = registro["Autor"].ToString();
+                        txtEditorial.Text = registro["Editorial"].ToString();
+                        txtAnoPublicacion.Text = registro["Anho_Publicacion"].ToString();
+                        txtEdicion.Text = registro["Edicion"].ToString();
+                        cmbMateriaID.SelectedText = registro["MateriaId"].ToString();
+                        ObtenerNombreMateria();
+                        txtPrecio.Text = registro["Precio"].ToString();
+                    }
+                }
             }
+            
         }
 
         private void cmbMateriaID_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtMateria.Text = "";
             ObtenerNombreMateria();
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            if (dtgDetalleLibro.Rows.Count == 0)
+            {
+                MessageBox.Show("Favor consulte primero antes de seleccionar!!");
+            }
+            else
+            {
+                int codigo = Convert.ToInt32(dtgDetalleLibro.CurrentRow.Cells[0].Value);
+                using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+                {
+                    con.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Libro WHERE Id =" + codigo + "", con);
+                    SqlDataReader registro = cmd.ExecuteReader();
+                    if (registro.Read())
+                    {
+                        txtCodigo.Text = registro["Id"].ToString();
+                        txtTitulo.Text = registro["Titulo"].ToString();
+                        txtAutor.Text = registro["Autor"].ToString();
+                        txtEditorial.Text = registro["Editorial"].ToString();
+                        txtAnoPublicacion.Text = registro["Anho_Publicacion"].ToString();
+                        txtEdicion.Text = registro["Edicion"].ToString();
+                        cmbMateriaID.SelectedText = registro["MateriaId"].ToString();
+                        ObtenerNombreMateria();
+                        txtPrecio.Text = registro["Precio"].ToString();
+                        
+                    }
+                }
+
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            LimpiarFormulario();
         }
     }
 }

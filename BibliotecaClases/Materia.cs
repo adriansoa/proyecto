@@ -48,24 +48,6 @@ namespace BibliotecaClases
             
         }
 
-
-        public static void EliminarMateria(Materia m)
-        {
-            
-                //listaProveedores.Remove(p);
-
-                        
-        }
-
-        public static void ModificarrMateria(Materia m)
-        {
-            //listaProveedores[index] = p;
-            
-        }
-
-
-
-
         public static List<int> ObtenerMateriaId()
         {
             Materia m;
