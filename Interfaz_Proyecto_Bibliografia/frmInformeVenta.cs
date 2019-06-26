@@ -16,5 +16,10 @@ namespace Interfaz_Proyecto_Bibliografia
         {
             InitializeComponent();
         }
+
+        private void frmInformeVenta_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

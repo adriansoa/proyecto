@@ -68,7 +68,7 @@ namespace BibliotecaClases
             using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = "Select * from Libro";
+                string textoCmd = "Select Titulo from Libro";
 
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
@@ -77,14 +77,8 @@ namespace BibliotecaClases
                 while (elLectorDeDatos.Read())
                 {
                     libro = new Libro();
-                    libro.codigo = elLectorDeDatos.GetInt32(0);
-                    libro.autor = elLectorDeDatos.GetString(1);
-                    libro.titulo = elLectorDeDatos.GetString(2);
-                    libro.editorial = elLectorDeDatos.GetString(3);
-                    libro.anho_publicacion = elLectorDeDatos.GetInt32(4);
-                    libro.edicion = elLectorDeDatos.GetString(5);
-                    libro.Precio = elLectorDeDatos.GetString(6);
-                    libro.materiaId = Materia.ObtenerMateria(elLectorDeDatos.GetSqlInt32(7));
+                    libro.titulo = elLectorDeDatos.GetString(0);
+                    
                     //Revisar la clase Materia,  funcion ObtenerMateria el codigo se repite 2 veces by Adrian
 
                     listaLibro.Add(libro);

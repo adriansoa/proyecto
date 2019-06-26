@@ -11,8 +11,8 @@ namespace BibliotecaClases
     public class FacturaVenta
     {
 
-        public int Nro_Factura { get; set; }
-        public string Nro_Timbrado { get; set; }
+        public string Nro_Factura { get; set; }
+        public int Nro_Timbrado { get; set; }
         public string Ruc { get; set; }
         public string Razon_Social { get; set; }
         public string Direccion { get; set; }
@@ -29,7 +29,7 @@ namespace BibliotecaClases
             using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"insert into Venta (NroFactura,NroTimbrado,Fecha_Emision,Ruc,Razon_Social,Direccion,Telefono,Cond_Venta) output INSERTED.id VALUES (@NroFactura, @NroTimbrado,@Fecha_Emision,@Ruc,@Razon_Social,@Direccion,@Telefono,@Cond_Venta)";
+                string textoCmd = @"insert into FacturaVenta (NroFactura,NroTimbrado,Fecha_Emision,Ruc,Razon_Social,Direccion,Telefono,Cond_Venta) output INSERTED.Codigo VALUES (@NroFactura, @NroTimbrado,@Fecha_Emision,@Ruc,@Razon_Social,@Direccion,@Telefono,@Cond_Venta)";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
                 SqlParameter p1 = new SqlParameter("@NroFactura", fv.Nro_Factura);
@@ -62,7 +62,7 @@ namespace BibliotecaClases
 
                 foreach (DetalleFacturaVenta dfv in fv.detalle_venta)
                 {
-                    string textoCmd2 = @"insert into Venta_Detalle (Venta_id, Cantidad, Bibliografia) VALUES (@id, @cantidad, @carne)";
+                    string textoCmd2 = @"insert into DetalleFacturaVenta (Venta_id, Cantidad, Libro) VALUES (@id, @cantidad, @libro)";
                     SqlCommand cmd2 = new SqlCommand(textoCmd2, con);
 
                     SqlParameter p9 = new SqlParameter("@Id", venta_id);

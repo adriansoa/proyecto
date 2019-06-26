@@ -24,11 +24,11 @@ namespace Interfaz_Proyecto_Bibliografia
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Libro libro = new Libro();
-            libro.codigo = txtCodigo.Text;
+            
             libro.titulo = txtTitulo.Text;
             libro.autor = txtAutor.Text;
             libro.editorial = txtEditorial.Text;
-            libro.anho_publicacion = txtAnoPublicacion.Text;
+            libro.anho_publicacion = Convert.ToInt32(txtAnoPublicacion.Text);
             libro.edicion = txtEdicion.Text;
             libro.materiaId =Convert.ToInt32(cmbMateriaID.SelectedItem);
             libro.Precio = txtPrecio.Text;
@@ -179,11 +179,11 @@ namespace Interfaz_Proyecto_Bibliografia
         private Libro ObtenerLibroFormulario()
         {
             Libro lib = new Libro();
-            libro.codigo = txtCodigo.Text;
+            libro.codigo = Convert.ToInt32(txtCodigo.Text);
             libro.titulo = txtTitulo.Text;
             libro.autor = txtAutor.Text;
             libro.editorial = txtEditorial.Text;
-            libro.anho_publicacion = txtAnoPublicacion.Text;
+            libro.anho_publicacion = Convert.ToInt32(txtAnoPublicacion.Text);
             libro.edicion = txtEdicion.Text;
             libro.materiaId = Convert.ToInt32(cmbMateriaID.SelectedItem);
             libro.Precio = txtPrecio.Text;
