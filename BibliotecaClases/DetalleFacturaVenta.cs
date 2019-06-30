@@ -10,5 +10,7 @@ namespace BibliotecaClases
     {
         public Libro Libro { get; set; }
         public int Cantidad { get; set; }
+        public int Precio { get; set; }
+        public int SubTotal { get; set; }
     }
 }
