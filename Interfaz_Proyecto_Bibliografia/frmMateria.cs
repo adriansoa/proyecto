@@ -91,6 +91,7 @@ namespace Interfaz_Proyecto_Bibliografia
                 }
                 else
                 {
+                    MessageBox.Show("Desea eliminar la materia seleccionada Si,No y Cancelar","Advertencia",MessageBoxButtons.YesNoCancel);
                     comando.Parameters.AddWithValue("@Id", txtCodigo.Text);
                     comando.ExecuteNonQuery();
                     MessageBox.Show("El registro fue eliminado");
@@ -116,10 +117,7 @@ namespace Interfaz_Proyecto_Bibliografia
 
                     string tipo_materia = ObtenerRadioButon();
 
-                    SqlCommand cmd = new SqlCommand("UPDATE Materia SET Nombre ='" + this.txtNombre.Text +
-                     "',Cantidad_Creditos='" + this.txtCantidadCreditos.Text +
-                    "',Tipo_Materia='" + tipo_materia +
-                    "' WHERE Codigo= " + codigo + "", con);
+                    SqlCommand cmd = new SqlCommand("UPDATE Materia SET Nombre ='" + this.txtNombre.Text +"', Cantidad_Creditos='" + this.txtCantidadCreditos.Text +"',Tipo_Materia='" + tipo_materia +"' WHERE Codigo= " + codigo + "", con);
                     
                     int resultado = cmd.ExecuteNonQuery();
 

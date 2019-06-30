@@ -83,6 +83,7 @@ namespace Interfaz_Proyecto_Bibliografia
                     SqlCommand cmd = new SqlCommand(sentenciasql, con);
                     int resultado = cmd.ExecuteNonQuery();
 
+                    MessageBox.Show("Desea eliminar la materia seleccionada Si,No y Cancelar", "Advertencia", MessageBoxButtons.YesNoCancel);
                     if (resultado != -1)
                     {
                         MessageBox.Show("Registro eliminado exitosamente!!" + resultado);

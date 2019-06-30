@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -25,41 +26,52 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
+            ValidarUsuario();
             Usuario.CrearUsuario(txtUsuario.Text, txtPassword.Text);
             MessageBox.Show("Usuario creado exitosamente");
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
+            
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
+        //private void ValidarUsuario()
 
-        }
+        //{
+        //    using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION)) //Crear un objeto SqlConnection
+        //    {
+        //        con.Open();
+        //        string textoCmd = "select * from usuario where password = '" +  txtPassword.Text+"',usuario='"+txtUsuario.Text+"'";
+                
+        //        if(textoCmd==txtUsuario.Text){
+        //            MessageBox.Show("Este usuario ya existe");
 
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
+        //        }
+        //        else
+        //        {
+        //            if (textoCmd == txtPassword.Text)
+        //            {
+        //                MessageBox.Show("Este password ya existe");
+        //            }
+                        
+        //        }
+        //    }
 
-        }
-
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        //}
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                Usuario.CrearUsuario(txtUsuario.Text, txtPassword.Text);
-                MessageBox.Show("Usuario creado exitosamente");
+                if (txtUsuario.Text.Trim().Equals(string.Empty))
+                {
+                    MessageBox.Show("Favor Ingresa el Usuario");
+                    return;
+                }
 
-                frmLogin frm = new frmLogin();
-                frm.Show();
-
-                this.Hide();
+                if (txtPassword.Text.Trim().Equals(string.Empty))
+                {
+                    MessageBox.Show("Favor Ingresa la clave");
+                    return;
+                }
             }
         }
     }

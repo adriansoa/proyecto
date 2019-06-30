@@ -50,7 +50,7 @@
             // btnLimpiar
             // 
             this.btnLimpiar.Location = new System.Drawing.Point(800, 266);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(100, 28);
             this.btnLimpiar.TabIndex = 27;
@@ -61,7 +61,7 @@
             // btnModificar
             // 
             this.btnModificar.Location = new System.Drawing.Point(800, 201);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(100, 28);
             this.btnModificar.TabIndex = 26;
@@ -72,7 +72,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Location = new System.Drawing.Point(800, 128);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(100, 28);
             this.btnEliminar.TabIndex = 25;
@@ -83,7 +83,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Location = new System.Drawing.Point(800, 62);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 28);
             this.btnAgregar.TabIndex = 24;
@@ -134,7 +134,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Location = new System.Drawing.Point(205, 52);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(132, 22);
             this.txtCodigo.TabIndex = 0;
@@ -142,7 +142,7 @@
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(205, 106);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(132, 22);
             this.txtNombre.TabIndex = 1;
@@ -150,7 +150,7 @@
             // txtCantidadCreditos
             // 
             this.txtCantidadCreditos.Location = new System.Drawing.Point(205, 155);
-            this.txtCantidadCreditos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCantidadCreditos.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidadCreditos.Name = "txtCantidadCreditos";
             this.txtCantidadCreditos.Size = new System.Drawing.Size(132, 22);
             this.txtCantidadCreditos.TabIndex = 2;
@@ -159,7 +159,7 @@
             // 
             this.rdbObligatoria.AutoSize = true;
             this.rdbObligatoria.Location = new System.Drawing.Point(193, 208);
-            this.rdbObligatoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbObligatoria.Margin = new System.Windows.Forms.Padding(4);
             this.rdbObligatoria.Name = "rdbObligatoria";
             this.rdbObligatoria.Size = new System.Drawing.Size(98, 21);
             this.rdbObligatoria.TabIndex = 3;
@@ -171,7 +171,7 @@
             // 
             this.rdbElectiva.AutoSize = true;
             this.rdbElectiva.Location = new System.Drawing.Point(329, 208);
-            this.rdbElectiva.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbElectiva.Margin = new System.Windows.Forms.Padding(4);
             this.rdbElectiva.Name = "rdbElectiva";
             this.rdbElectiva.Size = new System.Drawing.Size(78, 21);
             this.rdbElectiva.TabIndex = 36;
@@ -183,7 +183,7 @@
             // 
             this.dtgMaterias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgMaterias.Location = new System.Drawing.Point(43, 334);
-            this.dtgMaterias.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtgMaterias.Margin = new System.Windows.Forms.Padding(4);
             this.dtgMaterias.Name = "dtgMaterias";
             this.dtgMaterias.Size = new System.Drawing.Size(789, 185);
             this.dtgMaterias.TabIndex = 37;
@@ -192,7 +192,7 @@
             // btnConsultar
             // 
             this.btnConsultar.Location = new System.Drawing.Point(329, 277);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(100, 28);
             this.btnConsultar.TabIndex = 38;
@@ -221,7 +221,7 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMateria";
             this.Text = "Formulario de Materias";
             this.Load += new System.EventHandler(this.frmMateria_Load);

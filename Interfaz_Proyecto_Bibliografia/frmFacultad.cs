@@ -71,6 +71,7 @@ namespace Interfaz_Proyecto_Bibliografia
                     MessageBox.Show("Favor complete el campo CODIGO con el codigo del registro que desea eliminar!");
                 }else
                 {
+                    MessageBox.Show("Desea eliminar la materia seleccionada Si,No y Cancelar", "Advertencia", MessageBoxButtons.YesNoCancel);
                     comando.Parameters.AddWithValue("@Id", txtCodigo.Text);
                     comando.ExecuteNonQuery();
                     MessageBox.Show("El registro fue eliminado");

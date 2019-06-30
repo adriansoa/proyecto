@@ -145,6 +145,7 @@
             this.txtCI.Name = "txtCI";
             this.txtCI.Size = new System.Drawing.Size(132, 22);
             this.txtCI.TabIndex = 1;
+            this.txtCI.Leave += new System.EventHandler(this.txtCI_Leave);
             // 
             // txtTelefono
             // 
@@ -283,6 +284,7 @@
             this.txtNroFactura.Name = "txtNroFactura";
             this.txtNroFactura.Size = new System.Drawing.Size(132, 22);
             this.txtNroFactura.TabIndex = 25;
+            this.txtNroFactura.Leave += new System.EventHandler(this.txtNroFactura_Leave);
             // 
             // btnEliminar
             // 

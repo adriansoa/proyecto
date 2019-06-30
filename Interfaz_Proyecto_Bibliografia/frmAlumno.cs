@@ -94,6 +94,7 @@ namespace Interfaz_Proyecto_Bibliografia
                 }
                 else
                 {
+                    MessageBox.Show("Desea eliminar la materia seleccionada Si,No y Cancelar", "Advertencia", MessageBoxButtons.YesNoCancel);
                     comando.Parameters.AddWithValue("@Id", txtId.Text);
                     comando.ExecuteNonQuery();
                     MessageBox.Show("El registro fue eliminado");

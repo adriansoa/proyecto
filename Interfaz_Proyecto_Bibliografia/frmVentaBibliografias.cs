@@ -99,6 +99,44 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            string V_VALOR = "";
+            if (txtNombre.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor Ingrese el Nombre del Cliente", "Advertencia");
+                txtNombre.SelectAll();
+                txtNombre.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+
+            try
+            {
+                int resultado = int.Parse(txtCantidad.Text);
+                //dfv.Cantidad = Convert.ToInt32(txtCantidad.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Favor ingrese un valor numerico");
+                txtCantidad.Text = "";
+                txtCantidad.SelectAll();
+                txtCantidad.Focus();
+
+            }
+
+            try
+            {
+                int resultado = int.Parse(txtPrecio.Text);
+                //dfv.Precio = Convert.ToInt32(txtPrecio.Text);
+            }
+            catch
+            {
+                MessageBox.Show("Favor ingrese un valor numerico");
+                txtPrecio.Text = "";
+                txtPrecio.SelectAll();
+                txtPrecio.Focus();
+
+            }
+
             facturaventa.Fecha_Emision = dtpFechaEmision.Value.Date;
             facturaventa.Nro_Factura = txtNroFactura.Text;
             facturaventa.Nro_Timbrado = txtNroTimbrado.Text;
@@ -140,6 +178,32 @@ namespace Interfaz_Proyecto_Bibliografia
             n2 = Convert.ToInt32(txtPrecio.Text);
             r = n1 * n2;
             txtSubTotal.Text = r.ToString();
+        }
+
+        private void txtCI_Leave(object sender, EventArgs e)
+        {
+            string V_VALOR = "";
+            if (txtCI.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor Ingrese el numero de identidad del cliente", "Advertencia");
+                txtCI.SelectAll();
+                txtCI.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+        }
+
+        private void txtNroFactura_Leave(object sender, EventArgs e)
+        {
+            string V_VALOR = "";
+            if (txtNroFactura.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor Ingrese el numero de la factura", "Advertencia");
+                txtNroFactura.SelectAll();
+                txtNroFactura.Focus();
+                V_VALOR = "-1";
+                return;
+            }
         }
     }
 }
