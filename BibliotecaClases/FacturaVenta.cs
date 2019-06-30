@@ -82,6 +82,7 @@ namespace BibliotecaClases
                     cmd2.Parameters.Add(p13);
 
                     cmd2.ExecuteNonQuery();
+                    
                 }
             }
         }

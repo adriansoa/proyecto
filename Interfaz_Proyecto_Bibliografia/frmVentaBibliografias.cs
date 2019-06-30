@@ -25,7 +25,7 @@ namespace Interfaz_Proyecto_Bibliografia
             rdbContado.Checked = true;
             cmbLibro.DataSource = Libro.ObtenerLibros();
             cmbLibro.SelectedItem = null;
-
+            txtSubTotal.ReadOnly = true;
             facturaventa = new FacturaVenta();
         }
 
@@ -63,6 +63,7 @@ namespace Interfaz_Proyecto_Bibliografia
             dfv.SubTotal = Convert.ToInt32(txtSubTotal.Text);
             dfv.Libro = (Libro)cmbLibro.SelectedItem;
             facturaventa.detalle_venta.Add(dfv);
+           
             ActualizarDataGrid();
 
             Limpiar();
@@ -130,6 +131,15 @@ namespace Interfaz_Proyecto_Bibliografia
             facturaventa.detalle_venta.Remove(dfv);
             ActualizarDataGrid();
 
+        }
+
+        private void txtPrecio_Leave(object sender, EventArgs e)
+        {
+            int n1, n2, r;
+            n1 = Convert.ToInt32(txtCantidad.Text);
+            n2 = Convert.ToInt32(txtPrecio.Text);
+            r = n1 * n2;
+            txtSubTotal.Text = r.ToString();
         }
     }
 }
