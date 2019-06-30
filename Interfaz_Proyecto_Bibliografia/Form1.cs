@@ -69,5 +69,11 @@ namespace Interfaz_Proyecto_Bibliografia
             frmAcercaDe ad = new frmAcercaDe();
             ad.Show();
         }
+
+        private void tsmInforme_Click(object sender, EventArgs e)
+        {
+            frmInformeVenta fiv = new frmInformeVenta();
+            fiv.Show();
+        }
     }
 }

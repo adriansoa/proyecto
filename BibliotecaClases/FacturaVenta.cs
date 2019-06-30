@@ -12,7 +12,7 @@ namespace BibliotecaClases
     {
 
         public string Nro_Factura { get; set; }
-        public int Nro_Timbrado { get; set; }
+        public string Nro_Timbrado { get; set; }
         public string Ruc { get; set; }
         public string Razon_Social { get; set; }
         public string Direccion { get; set; }
@@ -29,7 +29,7 @@ namespace BibliotecaClases
             using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
             {
                 con.Open();
-                string textoCmd = @"insert into FacturaVenta (NroFactura,NroTimbrado,Fecha_Emision,Ruc,Razon_Social,Direccion,Telefono,Cond_Venta) output INSERTED.Codigo VALUES (@NroFactura, @NroTimbrado,@Fecha_Emision,@Ruc,@Razon_Social,@Direccion,@Telefono,@Cond_Venta)";
+                string textoCmd = @"insert into Venta (NroFactura,NroTimbrado,Fecha_Emision,Ruc,Razon_Social,Direccion,Telefono,Cond_Venta) output INSERTED.Id VALUES (@NroFactura, @NroTimbrado,@Fecha_Emision,@Ruc,@Razon_Social,@Direccion,@Telefono,@Cond_Venta)";
                 SqlCommand cmd = new SqlCommand(textoCmd, con);
 
                 SqlParameter p1 = new SqlParameter("@NroFactura", fv.Nro_Factura);
@@ -62,18 +62,24 @@ namespace BibliotecaClases
 
                 foreach (DetalleFacturaVenta dfv in fv.detalle_venta)
                 {
-                    string textoCmd2 = @"insert into DetalleFacturaVenta (Venta_id, Cantidad, Libro) VALUES (@id, @cantidad, @libro)";
+                    string textoCmd2 = @"insert into Venta_Detalle (Venta_id, Cantidad, Bibliografia,Precio,SubTotal) VALUES (@id, @cantidad, @Bibliografia,@Precio,@SubTotal)";
                     SqlCommand cmd2 = new SqlCommand(textoCmd2, con);
 
                     SqlParameter p9 = new SqlParameter("@Id", venta_id);
                     SqlParameter p10 = new SqlParameter("@Cantidad", dfv.Cantidad);
-                    SqlParameter p11 = new SqlParameter("@Libro", dfv.Libro.codigo);
+                    SqlParameter p11 = new SqlParameter("@Bibliografia", dfv.Libro.titulo);
+                    SqlParameter p12 = new SqlParameter("@Precio", dfv.Precio);
+                    SqlParameter p13 = new SqlParameter("@SubTotal", dfv.SubTotal);
                     p9.SqlDbType = SqlDbType.Int;
                     p10.SqlDbType = SqlDbType.Int;
-                    p11.SqlDbType = SqlDbType.Int;
+                    p11.SqlDbType = SqlDbType.VarChar;
+                    p12.SqlDbType = SqlDbType.Int;
+                    p13.SqlDbType = SqlDbType.Int;
                     cmd2.Parameters.Add(p9);
                     cmd2.Parameters.Add(p10);
                     cmd2.Parameters.Add(p11);
+                    cmd2.Parameters.Add(p12);
+                    cmd2.Parameters.Add(p13);
 
                     cmd2.ExecuteNonQuery();
                 }

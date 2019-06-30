@@ -16,7 +16,7 @@ namespace Interfaz_Proyecto_Bibliografia
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmUsuario());
+            Application.Run(new frmLogin());
         }
     }
 }

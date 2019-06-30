@@ -52,6 +52,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtNroTimbrado = new System.Windows.Forms.TextBox();
             this.txtNroFactura = new System.Windows.Forms.TextBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.dtgVentaDetalle = new System.Windows.Forms.DataGridView();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtSubTotal = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgVentaDetalle)).BeginInit();
             this.SuspendLayout();
             // 
             // lblFechaEmision
@@ -173,7 +181,7 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(252, 317);
+            this.btnAgregar.Location = new System.Drawing.Point(224, 317);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(100, 28);
@@ -184,7 +192,7 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(374, 317);
+            this.btnLimpiar.Location = new System.Drawing.Point(346, 317);
             this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(100, 28);
@@ -237,7 +245,7 @@
             this.txtCantidad.Location = new System.Drawing.Point(498, 218);
             this.txtCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(152, 22);
+            this.txtCantidad.Size = new System.Drawing.Size(72, 22);
             this.txtCantidad.TabIndex = 5;
             // 
             // label1
@@ -276,11 +284,79 @@
             this.txtNroFactura.Size = new System.Drawing.Size(132, 22);
             this.txtNroFactura.TabIndex = 25;
             // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(470, 317);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(100, 28);
+            this.btnEliminar.TabIndex = 26;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // dtgVentaDetalle
+            // 
+            this.dtgVentaDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgVentaDetalle.Location = new System.Drawing.Point(126, 364);
+            this.dtgVentaDetalle.Name = "dtgVentaDetalle";
+            this.dtgVentaDetalle.RowTemplate.Height = 24;
+            this.dtgVentaDetalle.Size = new System.Drawing.Size(664, 210);
+            this.dtgVentaDetalle.TabIndex = 27;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Location = new System.Drawing.Point(690, 616);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(100, 28);
+            this.btnGuardar.TabIndex = 28;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(593, 223);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(48, 17);
+            this.label3.TabIndex = 29;
+            this.label3.Text = "Precio";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(587, 269);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 17);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "SubTotal";
+            // 
+            // txtPrecio
+            // 
+            this.txtPrecio.Location = new System.Drawing.Point(658, 218);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(132, 22);
+            this.txtPrecio.TabIndex = 31;
+            // 
+            // txtSubTotal
+            // 
+            this.txtSubTotal.Location = new System.Drawing.Point(658, 264);
+            this.txtSubTotal.Name = "txtSubTotal";
+            this.txtSubTotal.Size = new System.Drawing.Size(132, 22);
+            this.txtSubTotal.TabIndex = 32;
+            // 
             // frmVentaBibliografias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(855, 391);
+            this.ClientSize = new System.Drawing.Size(988, 713);
+            this.Controls.Add(this.txtSubTotal);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.dtgVentaDetalle);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtNroFactura);
             this.Controls.Add(this.txtNroTimbrado);
             this.Controls.Add(this.label2);
@@ -309,6 +385,7 @@
             this.Name = "frmVentaBibliografias";
             this.Text = "Venta de Bibliografias";
             this.Load += new System.EventHandler(this.frmVentaBibliografias_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgVentaDetalle)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,5 +416,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtNroTimbrado;
         private System.Windows.Forms.TextBox txtNroFactura;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.DataGridView dtgVentaDetalle;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtSubTotal;
     }
 }

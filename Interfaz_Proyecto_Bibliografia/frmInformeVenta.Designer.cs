@@ -28,49 +28,50 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgVentaPendiente = new System.Windows.Forms.DataGridView();
             this.Estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dtgVentaConfirmada = new System.Windows.Forms.DataGridView();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgVentaPendiente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgVentaConfirmada)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dtgVentaPendiente
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dtgVentaPendiente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgVentaPendiente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Estado});
-            this.dataGridView1.Location = new System.Drawing.Point(47, 50);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(742, 191);
-            this.dataGridView1.TabIndex = 0;
+            this.dtgVentaPendiente.Location = new System.Drawing.Point(63, 62);
+            this.dtgVentaPendiente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgVentaPendiente.Name = "dtgVentaPendiente";
+            this.dtgVentaPendiente.RowTemplate.Height = 24;
+            this.dtgVentaPendiente.Size = new System.Drawing.Size(989, 235);
+            this.dtgVentaPendiente.TabIndex = 0;
             // 
             // Estado
             // 
             this.Estado.HeaderText = "Estado";
             this.Estado.Name = "Estado";
             // 
-            // dataGridView2
+            // dtgVentaConfirmada
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(47, 302);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(742, 191);
-            this.dataGridView2.TabIndex = 1;
+            this.dtgVentaConfirmada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgVentaConfirmada.Location = new System.Drawing.Point(63, 372);
+            this.dtgVentaConfirmada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgVentaConfirmada.Name = "dtgVentaConfirmada";
+            this.dtgVentaConfirmada.RowTemplate.Height = 24;
+            this.dtgVentaConfirmada.Size = new System.Drawing.Size(989, 235);
+            this.dtgVentaConfirmada.TabIndex = 1;
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(592, 255);
-            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConfirmar.Location = new System.Drawing.Point(789, 314);
+            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(73, 33);
+            this.btnConfirmar.Size = new System.Drawing.Size(100, 28);
             this.btnConfirmar.TabIndex = 2;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
@@ -78,39 +79,48 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 275);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(107, 338);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(101, 13);
+            this.label1.Size = new System.Drawing.Size(135, 17);
             this.label1.TabIndex = 3;
             this.label1.Text = "Ventas Confirmadas";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(86, 24);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(115, 30);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 13);
+            this.label2.Size = new System.Drawing.Size(127, 17);
             this.label2.TabIndex = 4;
             this.label2.Text = "Ventas Pendientes";
             // 
+            // btnConsultar
+            // 
+            this.btnConsultar.Location = new System.Drawing.Point(621, 314);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(100, 28);
+            this.btnConsultar.TabIndex = 5;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            // 
             // frmInformeVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(841, 538);
+            this.ClientSize = new System.Drawing.Size(1121, 662);
+            this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.dtgVentaConfirmada);
+            this.Controls.Add(this.dtgVentaPendiente);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmInformeVenta";
             this.Text = "frmInformeVenta";
             this.Load += new System.EventHandler(this.frmInformeVenta_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgVentaPendiente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgVentaConfirmada)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,11 +128,12 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dtgVentaPendiente;
+        private System.Windows.Forms.DataGridView dtgVentaConfirmada;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Estado;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnConsultar;
     }
 }
