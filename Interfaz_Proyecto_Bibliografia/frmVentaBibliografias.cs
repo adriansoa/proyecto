@@ -66,9 +66,18 @@ namespace Interfaz_Proyecto_Bibliografia
            
             ActualizarDataGrid();
 
-            Limpiar();
+            LimpiarDetalle();
 
         }
+
+        private void LimpiarDetalle()
+        {
+            txtCantidad.Text = "";
+            cmbLibro.SelectedItem = null;
+            txtPrecio.Text = "";
+            txtSubTotal.Text = "";
+        }
+
 
         private void ActualizarDataGrid()
         {
@@ -89,7 +98,7 @@ namespace Interfaz_Proyecto_Bibliografia
             cmbLibro.SelectedItem = null;
             txtPrecio.Text = "";
             txtSubTotal.Text = "";
-           
+            dtgVentaDetalle.DataSource = null;
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -105,6 +114,14 @@ namespace Interfaz_Proyecto_Bibliografia
                 MessageBox.Show("Favor Ingrese el Nombre del Cliente", "Advertencia");
                 txtNombre.SelectAll();
                 txtNombre.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+
+            if (dtpFechaEmision.Value < System.DateTime.Today)
+            {
+                MessageBox.Show("La fecha de emision no puede ser menor a la fecha actual!", "Advertencia");
+                dtpFechaEmision.Focus();
                 V_VALOR = "-1";
                 return;
             }
@@ -204,6 +221,57 @@ namespace Interfaz_Proyecto_Bibliografia
                 V_VALOR = "-1";
                 return;
             }
+        }
+
+        private void txtNroTimbrado_Leave(object sender, EventArgs e)
+        {
+            string V_VALOR = "";
+            if (txtNroTimbrado.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor Ingrese el numero de timbrado", "Advertencia");
+                txtNroTimbrado.SelectAll();
+                txtNroTimbrado.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            if (txtNroFactura.Text.Trim()!="" || txtNroTimbrado.Text.Trim() != "")
+            {
+               DialogResult resultado = MessageBox.Show("Desea cargar una nueva factura sin antes confirmar la actual?","ATENCION",MessageBoxButtons.YesNo);
+                if (resultado == DialogResult.Yes)
+                {
+                    Limpiar();
+                }
+            } 
+        }
+
+        private void txtDireccion_Leave(object sender, EventArgs e)
+        {
+            string V_VALOR = "";
+            if (txtDireccion.Text.Trim() == "")
+            {
+                MessageBox.Show("Favor Ingrese la direccion del cliente", "Advertencia");
+                txtDireccion.SelectAll();
+                txtDireccion.Focus();
+                V_VALOR = "-1";
+                return;
+            }
+        }
+
+        private void btnConsultarCliente_Click(object sender, EventArgs e)
+        {
+            frmAlumno al = new frmAlumno();
+            al.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmConsultaCliente cli = new frmConsultaCliente();
+            AddOwnedForm(cli);
+            cli.Show();
         }
     }
 }

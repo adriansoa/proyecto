@@ -28,24 +28,23 @@ namespace BibliotecaClases
             {
                 con.Open();
 
-                string sentenciasql = @"INSERT INTO Materia (Nombre,Cantidad_Creditos, Tipo_Materia, Precio)
-                                        VALUES (@Nombre,@Cantidad_Creditos, @Tipo_Materia, @Precio)";
+                string sentenciasql = @"INSERT INTO Materia (Nombre,Cantidad_Creditos, Tipo_Materia)
+                                        VALUES (@Nombre,@Cantidad_Creditos, @Tipo_Materia)";
                 SqlCommand cmd = new SqlCommand(sentenciasql, con);
                 SqlParameter p1 = new SqlParameter("@Nombre", m.Nombre);
                 SqlParameter p2 = new SqlParameter("@Cantidad_Creditos", m.cant_creditos);
                 SqlParameter p3 = new SqlParameter("@Tipo_Materia", m.tipo_materia);
-                SqlParameter p4 = new SqlParameter("@Precio", m.Precio);
+                
 
                 p1.SqlDbType = SqlDbType.VarChar;
                 p2.SqlDbType = SqlDbType.Int;
                 p3.SqlDbType = SqlDbType.VarChar;
-                p4.SqlDbType = SqlDbType.Int;
-                    ;
-
+               
+                 
                 cmd.Parameters.Add(p1);
                 cmd.Parameters.Add(p2);
                 cmd.Parameters.Add(p3);
-                cmd.Parameters.Add(p4);
+                
 
                 int n = cmd.ExecuteNonQuery();
             }

@@ -35,12 +35,16 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.dtgVentaConfirmada = new System.Windows.Forms.DataGridView();
             this.Columna1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Timbrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,27 +61,29 @@
             this.dtgVentaPendiente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgVentaPendiente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Columna1,
+            this.Column5,
+            this.Timbrado,
             this.Columna2,
             this.Columna3,
             this.Column1,
             this.Column3,
             this.Columna5,
             this.Columna7});
-            this.dtgVentaPendiente.Location = new System.Drawing.Point(63, 62);
-            this.dtgVentaPendiente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgVentaPendiente.Location = new System.Drawing.Point(47, 50);
+            this.dtgVentaPendiente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtgVentaPendiente.Name = "dtgVentaPendiente";
             this.dtgVentaPendiente.RowTemplate.Height = 24;
             this.dtgVentaPendiente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgVentaPendiente.Size = new System.Drawing.Size(989, 235);
+            this.dtgVentaPendiente.Size = new System.Drawing.Size(919, 191);
             this.dtgVentaPendiente.TabIndex = 0;
             this.dtgVentaPendiente.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dtgVentaPendiente_MouseClick);
             // 
             // btnConfirmar
             // 
-            this.btnConfirmar.Location = new System.Drawing.Point(789, 314);
-            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnConfirmar.Location = new System.Drawing.Point(592, 255);
+            this.btnConfirmar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(100, 28);
+            this.btnConfirmar.Size = new System.Drawing.Size(75, 23);
             this.btnConfirmar.TabIndex = 2;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.UseVisualStyleBackColor = true;
@@ -86,26 +92,29 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(107, 338);
+            this.label1.Location = new System.Drawing.Point(80, 275);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 17);
+            this.label1.Size = new System.Drawing.Size(101, 13);
             this.label1.TabIndex = 3;
             this.label1.Text = "Ventas Confirmadas";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(115, 30);
+            this.label2.Location = new System.Drawing.Point(86, 24);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(127, 17);
+            this.label2.Size = new System.Drawing.Size(96, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Ventas Pendientes";
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(621, 314);
+            this.btnConsultar.Location = new System.Drawing.Point(466, 255);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(100, 28);
+            this.btnConsultar.Size = new System.Drawing.Size(75, 23);
             this.btnConsultar.TabIndex = 5;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -116,23 +125,35 @@
             this.dtgVentaConfirmada.AllowUserToAddRows = false;
             this.dtgVentaConfirmada.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgVentaConfirmada.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NroFactura,
+            this.Column6,
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.Column2,
             this.Column4,
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn6});
-            this.dtgVentaConfirmada.Location = new System.Drawing.Point(63, 374);
-            this.dtgVentaConfirmada.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dtgVentaConfirmada.Location = new System.Drawing.Point(47, 304);
+            this.dtgVentaConfirmada.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtgVentaConfirmada.Name = "dtgVentaConfirmada";
             this.dtgVentaConfirmada.RowTemplate.Height = 24;
-            this.dtgVentaConfirmada.Size = new System.Drawing.Size(992, 235);
+            this.dtgVentaConfirmada.Size = new System.Drawing.Size(919, 191);
             this.dtgVentaConfirmada.TabIndex = 6;
             // 
             // Columna1
             // 
             this.Columna1.HeaderText = "Selecciona";
             this.Columna1.Name = "Columna1";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "NroFactura";
+            this.Column5.Name = "Column5";
+            // 
+            // Timbrado
+            // 
+            this.Timbrado.HeaderText = "Timbrado";
+            this.Timbrado.Name = "Timbrado";
             // 
             // Columna2
             // 
@@ -164,6 +185,16 @@
             // 
             this.Columna7.HeaderText = "SubTotal";
             this.Columna7.Name = "Columna7";
+            // 
+            // NroFactura
+            // 
+            this.NroFactura.HeaderText = "NroFactura";
+            this.NroFactura.Name = "NroFactura";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Timbrado";
+            this.Column6.Name = "Column6";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -198,18 +229,18 @@
             // 
             // frmInformeVenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1121, 662);
+            this.ClientSize = new System.Drawing.Size(1040, 538);
             this.Controls.Add(this.dtgVentaConfirmada);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.dtgVentaPendiente);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmInformeVenta";
-            this.Text = "frmInformeVenta";
+            this.Text = "Informe de Ventas";
             this.Load += new System.EventHandler(this.frmInformeVenta_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgVentaPendiente)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgVentaConfirmada)).EndInit();
@@ -227,12 +258,16 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.DataGridView dtgVentaConfirmada;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Columna1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Timbrado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Columna2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Columna3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Columna5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Columna7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NroFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

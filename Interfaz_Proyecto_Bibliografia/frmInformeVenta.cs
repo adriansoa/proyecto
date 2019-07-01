@@ -42,7 +42,7 @@ namespace Interfaz_Proyecto_Bibliografia
                 //dtgVentaPendiente.DataSource = tabla;
 
                 con.Open();
-                SqlCommand comando = new SqlCommand("select v.fecha_emision,v.razon_social,v.cond_venta,vd.cantidad,vd.bibliografia,vd.subtotal from venta as v inner join venta_detalle as vd on v.Id = vd.venta_id", con);
+                SqlCommand comando = new SqlCommand("select v.NroFactura,v.NroTimbrado,v.fecha_emision,v.razon_social,v.cond_venta,vd.cantidad,vd.bibliografia,vd.subtotal from venta as v inner join venta_detalle as vd on v.Id = vd.venta_id", con);
                 SqlDataAdapter adaptador = new SqlDataAdapter();
                 adaptador.SelectCommand = comando;
                 DataTable tabla = new DataTable();
@@ -52,12 +52,14 @@ namespace Interfaz_Proyecto_Bibliografia
                 {
                     int n = dtgVentaPendiente.Rows.Add();
                     dtgVentaPendiente.Rows[n].Cells[0].Value =false;
-                    dtgVentaPendiente.Rows[n].Cells[1].Value = item["fecha_emision"].ToString();
-                    dtgVentaPendiente.Rows[n].Cells[2].Value = item["cond_venta"].ToString();
-                    dtgVentaPendiente.Rows[n].Cells[3].Value = item["razon_social"].ToString();
-                    dtgVentaPendiente.Rows[n].Cells[4].Value = item["cantidad"].ToString();
-                    dtgVentaPendiente.Rows[n].Cells[5].Value = item["bibliografia"].ToString();
-                    dtgVentaPendiente.Rows[n].Cells[6].Value = item["subtotal"].ToString();
+                    dtgVentaPendiente.Rows[n].Cells[1].Value = item["NroFactura"].ToString();
+                    dtgVentaPendiente.Rows[n].Cells[2].Value = item["NroTimbrado"].ToString();
+                    dtgVentaPendiente.Rows[n].Cells[3].Value = item["fecha_emision"].ToString();
+                    dtgVentaPendiente.Rows[n].Cells[4].Value = item["cond_venta"].ToString();
+                    dtgVentaPendiente.Rows[n].Cells[5].Value = item["razon_social"].ToString();
+                    dtgVentaPendiente.Rows[n].Cells[6].Value = item["cantidad"].ToString();
+                    dtgVentaPendiente.Rows[n].Cells[7].Value = item["bibliografia"].ToString();
+                    dtgVentaPendiente.Rows[n].Cells[8].Value = item["subtotal"].ToString();
                 }
             }
         }
