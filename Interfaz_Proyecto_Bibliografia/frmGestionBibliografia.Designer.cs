@@ -42,48 +42,46 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(59, 47);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(79, 58);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(42, 13);
+            this.label1.Size = new System.Drawing.Size(55, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Materia";
             // 
             // cmbMateria
             // 
             this.cmbMateria.FormattingEnabled = true;
-            this.cmbMateria.Location = new System.Drawing.Point(114, 47);
-            this.cmbMateria.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbMateria.Location = new System.Drawing.Point(152, 58);
+            this.cmbMateria.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbMateria.Name = "cmbMateria";
-            this.cmbMateria.Size = new System.Drawing.Size(196, 21);
+            this.cmbMateria.Size = new System.Drawing.Size(260, 24);
             this.cmbMateria.TabIndex = 1;
             // 
             // lblBibliografia
             // 
             this.lblBibliografia.AutoSize = true;
-            this.lblBibliografia.Location = new System.Drawing.Point(52, 111);
-            this.lblBibliografia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBibliografia.Location = new System.Drawing.Point(69, 137);
             this.lblBibliografia.Name = "lblBibliografia";
-            this.lblBibliografia.Size = new System.Drawing.Size(58, 13);
+            this.lblBibliografia.Size = new System.Drawing.Size(78, 17);
             this.lblBibliografia.TabIndex = 2;
             this.lblBibliografia.Text = "Bibliografia";
             // 
             // dtgBibliografiaDetalle
             // 
             this.dtgBibliografiaDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgBibliografiaDetalle.Location = new System.Drawing.Point(55, 152);
-            this.dtgBibliografiaDetalle.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgBibliografiaDetalle.Location = new System.Drawing.Point(73, 187);
+            this.dtgBibliografiaDetalle.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgBibliografiaDetalle.Name = "dtgBibliografiaDetalle";
             this.dtgBibliografiaDetalle.RowTemplate.Height = 24;
-            this.dtgBibliografiaDetalle.Size = new System.Drawing.Size(525, 122);
+            this.dtgBibliografiaDetalle.Size = new System.Drawing.Size(700, 150);
             this.dtgBibliografiaDetalle.TabIndex = 3;
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Location = new System.Drawing.Point(449, 34);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConsultar.Location = new System.Drawing.Point(599, 42);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(68, 32);
+            this.btnConsultar.Size = new System.Drawing.Size(91, 39);
             this.btnConsultar.TabIndex = 4;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -91,10 +89,10 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(170, 335);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAgregar.Location = new System.Drawing.Point(227, 412);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(68, 32);
+            this.btnAgregar.Size = new System.Drawing.Size(91, 39);
             this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
@@ -102,10 +100,10 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(307, 335);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Location = new System.Drawing.Point(409, 412);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(68, 32);
+            this.btnEliminar.Size = new System.Drawing.Size(91, 39);
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -113,10 +111,10 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(449, 335);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrar.Location = new System.Drawing.Point(599, 412);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(68, 32);
+            this.btnCerrar.Size = new System.Drawing.Size(91, 39);
             this.btnCerrar.TabIndex = 7;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
@@ -124,9 +122,9 @@
             // 
             // frmGestionBibliografia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 413);
+            this.ClientSize = new System.Drawing.Size(883, 508);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAgregar);
@@ -135,7 +133,9 @@
             this.Controls.Add(this.lblBibliografia);
             this.Controls.Add(this.cmbMateria);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmGestionBibliografia";
             this.Text = "Gestion de Bibliografias";
             this.Load += new System.EventHandler(this.frmGestionBibliografia_Load);

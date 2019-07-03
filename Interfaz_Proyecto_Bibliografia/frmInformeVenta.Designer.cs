@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.dtgVentaPendiente = new System.Windows.Forms.DataGridView();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.dtgVentaConfirmada = new System.Windows.Forms.DataGridView();
             this.Columna1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Columna2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -41,6 +36,11 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.dtgVentaConfirmada = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +71,42 @@
             this.dtgVentaPendiente.Size = new System.Drawing.Size(989, 235);
             this.dtgVentaPendiente.TabIndex = 0;
             this.dtgVentaPendiente.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dtgVentaPendiente_MouseClick);
+            // 
+            // Columna1
+            // 
+            this.Columna1.HeaderText = "Selecciona";
+            this.Columna1.Name = "Columna1";
+            // 
+            // Columna2
+            // 
+            this.Columna2.HeaderText = "Fecha Emision";
+            this.Columna2.Name = "Columna2";
+            // 
+            // Columna3
+            // 
+            this.Columna3.HeaderText = "Cond. Venta";
+            this.Columna3.Name = "Columna3";
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "Razon Social";
+            this.Column1.Name = "Column1";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Bibliografia";
+            this.Column3.Name = "Column3";
+            // 
+            // Columna5
+            // 
+            this.Columna5.HeaderText = "Cantidad";
+            this.Columna5.Name = "Columna5";
+            // 
+            // Columna7
+            // 
+            this.Columna7.HeaderText = "SubTotal";
+            this.Columna7.Name = "Columna7";
             // 
             // btnConfirmar
             // 
@@ -129,42 +165,6 @@
             this.dtgVentaConfirmada.Size = new System.Drawing.Size(992, 235);
             this.dtgVentaConfirmada.TabIndex = 6;
             // 
-            // Columna1
-            // 
-            this.Columna1.HeaderText = "Selecciona";
-            this.Columna1.Name = "Columna1";
-            // 
-            // Columna2
-            // 
-            this.Columna2.HeaderText = "Fecha Emision";
-            this.Columna2.Name = "Columna2";
-            // 
-            // Columna3
-            // 
-            this.Columna3.HeaderText = "Cond. Venta";
-            this.Columna3.Name = "Columna3";
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Razon Social";
-            this.Column1.Name = "Column1";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Bibliografia";
-            this.Column3.Name = "Column3";
-            // 
-            // Columna5
-            // 
-            this.Columna5.HeaderText = "Cantidad";
-            this.Columna5.Name = "Columna5";
-            // 
-            // Columna7
-            // 
-            this.Columna7.HeaderText = "SubTotal";
-            this.Columna7.Name = "Columna7";
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Fecha Emision";
@@ -208,6 +208,8 @@
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.dtgVentaPendiente);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmInformeVenta";
             this.Text = "frmInformeVenta";
             this.Load += new System.EventHandler(this.frmInformeVenta_Load);

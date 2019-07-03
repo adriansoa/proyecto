@@ -95,7 +95,10 @@
             this.Controls.Add(this.txtUsuario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmUsuario";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Usuario";
             this.Load += new System.EventHandler(this.frmUsuario_Load);
             this.ResumeLayout(false);

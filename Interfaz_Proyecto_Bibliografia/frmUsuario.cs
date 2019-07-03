@@ -26,7 +26,7 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void btnCrear_Click(object sender, EventArgs e)
         {
-            ValidarUsuario();
+            //ValidarUsuario();
             Usuario.CrearUsuario(txtUsuario.Text, txtPassword.Text);
             MessageBox.Show("Usuario creado exitosamente");
             
@@ -72,6 +72,8 @@ namespace Interfaz_Proyecto_Bibliografia
                     MessageBox.Show("Favor Ingresa la clave");
                     return;
                 }
+
+
             }
         }
     }

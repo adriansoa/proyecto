@@ -222,6 +222,8 @@
             this.Controls.Add(this.btnAgregar);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMateria";
             this.Text = "Formulario de Materias";
             this.Load += new System.EventHandler(this.frmMateria_Load);

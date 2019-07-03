@@ -60,13 +60,13 @@ namespace Interfaz_Proyecto_Bibliografia
                     MessageBox.Show("Favor Ingresa el Usuario");
                     return;
                 }
-
+                
                 if (txtPassword.Text.Trim().Equals(string.Empty))
                 {
                     MessageBox.Show("Favor Ingresa la clave");
                     return;
                 }
-
+                
                 if (Usuario.Autenticar(txtUsuario.Text, txtPassword.Text))
                 {
                     this.Hide();
