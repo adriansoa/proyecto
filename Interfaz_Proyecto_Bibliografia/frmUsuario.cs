@@ -29,8 +29,33 @@ namespace Interfaz_Proyecto_Bibliografia
             //ValidarUsuario();
             Usuario.CrearUsuario(txtUsuario.Text, txtPassword.Text);
             MessageBox.Show("Usuario creado exitosamente");
+            
 
         }
+
+        //private void ValidarUsuario()
+
+        //{
+        //    using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION)) //Crear un objeto SqlConnection
+        //    {
+        //        con.Open();
+        //        string textoCmd = "select * from usuario where password = '" +  txtPassword.Text+"',usuario='"+txtUsuario.Text+"'";
+                
+        //        if(textoCmd==txtUsuario.Text){
+        //            MessageBox.Show("Este usuario ya existe");
+
+        //        }
+        //        else
+        //        {
+        //            if (textoCmd == txtPassword.Text)
+        //            {
+        //                MessageBox.Show("Este password ya existe");
+        //            }
+                        
+        //        }
+        //    }
+
+        //}
 
         private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -38,14 +63,13 @@ namespace Interfaz_Proyecto_Bibliografia
             {
                 if (txtUsuario.Text.Trim().Equals(string.Empty))
                 {
-                    
-                    MessageBox.Show("Favor Ingresa el Usuario", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Favor Ingresa el Usuario");
                     return;
                 }
 
                 if (txtPassword.Text.Trim().Equals(string.Empty))
                 {
-                    MessageBox.Show("Favor Ingresa la clave", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    MessageBox.Show("Favor Ingresa la clave");
                     return;
                 }
             }

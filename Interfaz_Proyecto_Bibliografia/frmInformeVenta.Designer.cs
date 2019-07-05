@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.dtgVentaPendiente = new System.Windows.Forms.DataGridView();
+            this.btnConfirmar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.dtgVentaConfirmada = new System.Windows.Forms.DataGridView();
             this.Columna1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Timbrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,6 +43,8 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Columna7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NroFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,42 +77,6 @@
             this.dtgVentaPendiente.Size = new System.Drawing.Size(919, 191);
             this.dtgVentaPendiente.TabIndex = 0;
             this.dtgVentaPendiente.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dtgVentaPendiente_MouseClick);
-            // 
-            // Columna1
-            // 
-            this.Columna1.HeaderText = "Selecciona";
-            this.Columna1.Name = "Columna1";
-            // 
-            // Columna2
-            // 
-            this.Columna2.HeaderText = "Fecha Emision";
-            this.Columna2.Name = "Columna2";
-            // 
-            // Columna3
-            // 
-            this.Columna3.HeaderText = "Cond. Venta";
-            this.Columna3.Name = "Columna3";
-            // 
-            // Column1
-            // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column1.HeaderText = "Razon Social";
-            this.Column1.Name = "Column1";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Bibliografia";
-            this.Column3.Name = "Column3";
-            // 
-            // Columna5
-            // 
-            this.Columna5.HeaderText = "Cantidad";
-            this.Columna5.Name = "Columna5";
-            // 
-            // Columna7
-            // 
-            this.Columna7.HeaderText = "SubTotal";
-            this.Columna7.Name = "Columna7";
             // 
             // btnConfirmar
             // 
@@ -174,6 +145,16 @@
             this.Columna1.HeaderText = "Selecciona";
             this.Columna1.Name = "Columna1";
             // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "NroFactura";
+            this.Column5.Name = "Column5";
+            // 
+            // Timbrado
+            // 
+            this.Timbrado.HeaderText = "Timbrado";
+            this.Timbrado.Name = "Timbrado";
+            // 
             // Columna2
             // 
             this.Columna2.HeaderText = "Fecha Emision";
@@ -204,6 +185,16 @@
             // 
             this.Columna7.HeaderText = "SubTotal";
             this.Columna7.Name = "Columna7";
+            // 
+            // NroFactura
+            // 
+            this.NroFactura.HeaderText = "NroFactura";
+            this.NroFactura.Name = "NroFactura";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Timbrado";
+            this.Column6.Name = "Column6";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -247,7 +238,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.dtgVentaPendiente);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmInformeVenta";
             this.Text = "Informe de Ventas";
             this.Load += new System.EventHandler(this.frmInformeVenta_Load);

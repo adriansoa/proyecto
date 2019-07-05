@@ -126,7 +126,7 @@ namespace Interfaz_Proyecto_Bibliografia
                 return;
             }
 
-            try
+            /*try
             {
                 int resultado = int.Parse(txtCantidad.Text);
                 //dfv.Cantidad = Convert.ToInt32(txtCantidad.Text);
@@ -152,7 +152,7 @@ namespace Interfaz_Proyecto_Bibliografia
                 txtPrecio.SelectAll();
                 txtPrecio.Focus();
 
-            }
+            }*/
 
             facturaventa.Fecha_Emision = dtpFechaEmision.Value.Date;
             facturaventa.Nro_Factura = txtNroFactura.Text;
@@ -197,7 +197,7 @@ namespace Interfaz_Proyecto_Bibliografia
             txtSubTotal.Text = r.ToString();
         }
 
-        private void txtCI_Leave(object sender, EventArgs e)
+        /*private void txtCI_Leave(object sender, EventArgs e)
         {
             string V_VALOR = "";
             if (txtCI.Text.Trim() == "")
@@ -208,7 +208,7 @@ namespace Interfaz_Proyecto_Bibliografia
                 V_VALOR = "-1";
                 return;
             }
-        }
+        }*/
 
         private void txtNroFactura_Leave(object sender, EventArgs e)
         {

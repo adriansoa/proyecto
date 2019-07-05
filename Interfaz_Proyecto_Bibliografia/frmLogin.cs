@@ -57,35 +57,28 @@ namespace Interfaz_Proyecto_Bibliografia
             {
                 if (txtUsuario.Text.Trim().Equals(string.Empty))
                 {
-                    MessageBox.Show("Favor Ingrese el Usuario");
+                    MessageBox.Show("Favor Ingresa el Usuario");
                     return;
                 }
-                
+
                 if (txtPassword.Text.Trim().Equals(string.Empty))
                 {
-                    MessageBox.Show("Favor Ingrese la clave");
+                    MessageBox.Show("Favor Ingresa la clave");
                     return;
                 }
-                try
+
+                if (Usuario.Autenticar(txtUsuario.Text, txtPassword.Text))
                 {
-                    if (Usuario.Autenticar(txtUsuario.Text, txtPassword.Text))
-                    {
-                        this.Hide();
-                        MessageBox.Show("Bienvenido " + txtUsuario.Text);
-                        frmMenuPrincipal elmenuPrincipal = new frmMenuPrincipal();
-                        elmenuPrincipal.ShowDialog();
-                        this.Close();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Usuario o contraseña incorrectos");
-                    }
+                    this.Hide();
+                    MessageBox.Show("Bienvenido " + txtUsuario.Text);
+                    frmMenuPrincipal elmenuPrincipal = new frmMenuPrincipal();
+                    elmenuPrincipal.ShowDialog();
+                    this.Close();
                 }
-                catch(Exception ex)
+                else
                 {
-                    MessageBox.Show("Ha ocurrido un error: " + ex.Message);
+                    MessageBox.Show("Usuario o contraseña incorrectos");
                 }
-                
             }
         }
     }
