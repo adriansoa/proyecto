@@ -236,10 +236,10 @@ namespace Interfaz_Proyecto_Bibliografia
             else
             {
                 int codigo = Convert.ToInt32(dtgDetalleLibro.CurrentRow.Cells[0].Value);
-                using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+                using (SqlConnection conex = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
                 {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand("SELECT * FROM Libro WHERE Id =" + codigo + "", con);
+                    conex.Open();
+                    SqlCommand cmd = new SqlCommand("SELECT * FROM Libro WHERE Id =" + codigo + "", conex);
                     SqlDataReader registro = cmd.ExecuteReader();
                     if (registro.Read())
                     {
@@ -250,7 +250,26 @@ namespace Interfaz_Proyecto_Bibliografia
                         txtAnoPublicacion.Text = registro["Anho_Publicacion"].ToString();
                         txtEdicion.Text = registro["Edicion"].ToString();
                         cmbMateriaID.SelectedText = registro["MateriaId"].ToString();
-                        ObtenerNombreMateria();
+                        int materiaId = (int)registro["MateriaId"];
+
+                        //ObtenerNombreMateria();
+                        using (SqlConnection con = new SqlConnection(ConexionSqlServer.CADENA_CONEXION))
+                        {
+                            con.Open();
+                            string sentenciaSQL = "SELECT * FROM Materia WHERE Codigo =" + materiaId + "";
+                            SqlCommand comando = new SqlCommand(sentenciaSQL, con);
+                            SqlDataReader elLectordeDatos = comando.ExecuteReader();
+                            while (elLectordeDatos.Read())
+                            {
+                                Materia materia = new Materia();
+                                string nombre = materia.Nombre = elLectordeDatos.GetString(1);
+                                txtMateria.Text = nombre;
+                            }
+                        }
+
+
+
+
                         txtPrecio.Text = registro["Precio"].ToString();
                         
                     }

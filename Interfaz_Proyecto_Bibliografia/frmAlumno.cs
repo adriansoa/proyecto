@@ -94,7 +94,7 @@ namespace Interfaz_Proyecto_Bibliografia
                 }
                 else
                 {
-                    MessageBox.Show("Desea eliminar la materia seleccionada Si,No y Cancelar", "Advertencia", MessageBoxButtons.YesNoCancel);
+                    MessageBox.Show("Desea eliminar el alumno seleccionado??", "ADVERTENCIA!", MessageBoxButtons.YesNoCancel);
                     comando.Parameters.AddWithValue("@Id", txtId.Text);
                     comando.ExecuteNonQuery();
                     MessageBox.Show("El registro fue eliminado");
@@ -108,7 +108,7 @@ namespace Interfaz_Proyecto_Bibliografia
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (dtgAlumno.Rows.Count == 0)
+            if (dtgAlumno.Rows.Count == 0 || txtId.Text.Trim()=="")
             {
                 MessageBox.Show("Favor seleccione una fila de la grilla!!");
             }
